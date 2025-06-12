@@ -7,13 +7,15 @@ export default function Footer() {
 
     return (
         <>
- <footer className="footer-box px-lg-5 px-md-3 px-2">
+        <footer className="footer-box px-lg-5 px-md-3 px-2">
             <div className="row mx-auto">
                 <div className="col-lg-6 col-md-12 col-sm-12 mb-3 about-scoop footer-items">
                     <div className="footer-logo"> 
-                        Scoop<span>Cost</span>
+                        rewarditt
                     </div>
-                    <p>Hey there! Glad you stopped by ScoopCost.com. We’ve got tons of cool coupons and awesome deals on all your favorite brands. Keep checking in — there’s always something new to save on!</p>
+                    <p>
+                            Get rewarded for every purchase! You’ll earn guaranteed points every time you shop with us. These points keep adding up and can be redeemed later for real cash value. Whether you’re shopping for daily needs or something special, you'll always be rewarded. Join our reward program today and start getting benefits from your next purchase. Easy to earn, simple to use, and totally transparent!
+                    </p>
                    
                 </div>
                 <div className="col-lg-3 col-md-4 col-sm-12 mb-3 footer-links">
@@ -37,7 +39,7 @@ export default function Footer() {
             <div className="row pt-5">
                 <div className="col-lg-8 mb-4">
                     <div className="policyBox">
-                        <p>ScoopCost.com is a product of Social Labs Enterprises PVT. LTD.</p>
+                        <p>rewarditt.com is a product of Social Labs Enterprises PVT. LTD.</p>
                     </div>
                 </div>
                 <div className="col-lg-4">
@@ -73,13 +75,13 @@ export default function Footer() {
           <div>
               <div className="row text-center px-md-5 py-2">
                   <p className="copyright-para mb-2">
-                      ScoopCost earns affiliate commissions on qualifying purchases as an Amazon associate. "Amazon, and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
+                      rewarditt earns affiliate commissions on qualifying purchases as an Amazon associate. "Amazon, and the Amazon logo are trademarks of Amazon.com, Inc. or its affiliates.
                   </p>
                   <p className="lovtxt">
                       Made with love ❤️ from United Kingdom
                   </p>
                   <p className="lovtxt">
-                  DISCLAIMER: ScoopCost is owned and operated by A Private Consultancy Firm and in no way represent any relation with any Government Authority or Body.
+                  DISCLAIMER: rewarditt is owned and operated by A Private Consultancy Firm and in no way represent any relation with any Government Authority or Body.
                   </p>
               </div>
           </div>

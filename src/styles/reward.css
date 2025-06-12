@@ -1,0 +1,265 @@
+.container{
+    max-width: 1200px;
+}
+.rewardPage{
+    padding: 2rem 0;
+}
+.rewardPage .imgBox img{
+    object-fit: contain;
+    max-width: 100%;
+}
+.rewardPage .txtBox{
+    text-align: center;
+}
+.rewardPage .txtBox h1{
+   font-weight: 600;
+   font-size: 2.6rem;
+   line-height: 1.4;
+   margin-bottom: 1rem;
+}
+.rewardPage .txtBox h1 span{
+   color: var(--primary-color);
+   display: inline-block;
+}
+.rewardPage .txtBox .joinNow{
+    padding: .5rem 1rem;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    margin-bottom: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+.rewardPage .txtBox .joinNow:hover{
+   background-color: var(--primary-color);
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+.rewardPage .txtBox p {
+   font-weight: 500;
+   font-size: 1rem;
+   color: #333;
+}
+.rewardPage .txtBox p a{
+   color: var(--primary-color);
+
+}
+.rewardPage .txtBox p a:hover{
+   text-decoration: underline;
+}
+.rewardPage .hashTag{
+    color: #999;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+}
+@media(max-width: 550px){
+    .rewardPage .txtBox h1 {
+    font-size: 1.6rem;
+}
+}
+/* reward-section */
+.rewards-section {
+          padding: 30px 20px;
+          text-align: center;
+        }
+
+        .rewards-section h2 {
+          font-weight: 600;
+          font-size: 2.2rem;
+          margin-bottom: 40px;
+          color: #4B0082;
+        }
+
+        .reward-box {
+          margin-bottom: 40px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          padding: 20px;
+          border-radius: 12px;
+        }
+
+        .reward-box:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+          background-color: #f9f9f9;
+        }
+
+        .reward-icon {
+          font-size: 40px;
+          color: #4B9E9E;
+          margin-bottom: 15px;
+        }
+
+        .reward-title {
+          font-weight: 700;
+          font-size: 1.2rem;
+          color: #111;
+        }
+
+        .reward-desc {
+          color: #6c757d;
+          font-size: 0.95rem;
+          margin-top: 5px;
+        }
+        @media(max-width:560px){
+            .rewards-section h2 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            .rewardPage{
+                padding-bottom: 0;
+            }
+            .rewards-section{
+                padding-top: 0;
+            }
+            .reward-box{
+                margin-bottom: 10px;
+            }
+        }
+/* sebscribe */
+  .subscribe-section {
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    margin: 50px 0;
+  }
+    .subscribe-box  {
+   max-width: 1200px;
+   background: linear-gradient(135deg, #4B0082, #8A2BE2);
+    border-radius: 20px;
+     padding: 60px 20px;
+  }
+
+  .subscribe-box h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+  }
+
+  .subscribe-box p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    color: #eee;
+  }
+    .subscribe-form {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  }
+
+  .subscribe-form input.form-control {
+    height: 50px;
+    font-size: 1rem;
+    border-radius: 8px 0 0 8px;
+    border: none;
+    box-shadow: none;
+    max-width: 100%;
+    width: 450px;
+    display: inline-flex;
+  }
+  
+  .btn-subscribe {
+    height: 50px;
+    font-size: 1rem;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0 8px 8px 0;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-subscribe:hover {
+    background-color: #bda8dc;
+  }
+  @media (max-width: 600px) {
+      .subscribe-form input.form-control {
+    width: 200px;
+  }
+  .subscribe-box h2 {
+    font-size: 1.4rem;
+  }
+
+  }
+  /* user sec */
+  .usersection .userBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2rem;
+  }
+  .usersection .container{
+    border-bottom: 1px solid #ccc;
+  }
+  .usersection .userName {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+   .usersection  .points {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin: 0;
+    }
+
+    .usersection h2 span {
+      font-weight: bold;
+      color: #558781;
+    }
+
+    .usersection .expiry-warning {
+      color: #e53935;
+      font-size: 1rem;
+      margin-top: 15px;
+      text-align: center;
+    }
+
+    .usersection .expiry-warning i {
+      font-style: normal;
+      margin-right: 5px;
+      font-size: 25px;
+    }
+
+    .usersection .expiry-warning b {
+      font-weight: bold;
+    }
+
+    .usersection .btn-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .usersection .btn {
+      display: inline-block;
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 12px 25px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .usersection .btn:hover {
+      background-color: var(--secondary-color);
+    }
+    @media (max-width: 500px) {
+      
+      .usersection .btn-container .btn{
+       padding: .5rem .8rem;
+       font-size: .8rem;
+      }
+      .usersection .userName{
+        font-size: 1.8rem;
+      }
+      .usersection .points{
+        font-size: 1.6rem;
+      }
+      .usersection .expiry-warning {
+          font-size: .9rem;
+      }
+    }
