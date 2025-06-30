@@ -6,7 +6,7 @@ import "@/styles/reward-history.css";
 import { useState, useEffect } from "react";
 
 
-export default function rewardPage({ }) {
+export default function rewardHistory({ }) {
 
     return (
         <>
