@@ -1,0 +1,360 @@
+.rewardStr{
+    padding: 3rem 0;
+}
+.rewardStr h1{
+   font-weight: 600;
+   font-size: 1.8rem;
+}
+.rewardStr .banner img{
+   /* object-fit: contain; */
+   border-radius: 250px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   max-width: 100%;
+}
+.barndInfo {
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 1.2rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.barndInfo .ttl {
+    font-weight: 600;
+    margin-bottom: .5rem;
+    font-size: 1.4rem;
+    color: #222;
+}
+.barndInfo .stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 1rem;
+}
+.barndInfo .infoBox {
+    margin-bottom: 1rem;
+}
+.barndInfo .infoHead {
+    font-weight: 600;
+    color: #000;
+    font-size: 1rem;
+}
+.barndInfo .infoItem {
+    font-weight: 500;
+    color: #51596b;
+    margin-bottom: .5rem;
+    font-size: .9rem;
+}
+.barndInfo .stars svg {
+    width: 16px;
+    height: 16px;
+    fill: #ffd43a;
+}
+.barndInfo .right .brandLogo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    border-radius: 5px;
+    height: 100px;
+    width: 100px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .3), 0 1px 3px 1px rgba(60, 64, 67, .15);
+}
+.infoBox .infoItem button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #1a0dab;
+    text-align: left;
+}
+.infoBox .infoItem button:hover{
+    text-decoration: underline;
+}
+/* modal */
+ .giftModal .modal-dialog{
+      max-width: 700px;
+    }
+    .giftModal .modal-dialog .modal-content{
+      border-radius: 20px;
+    }
+    .giftModal .closeBtn{
+      box-shadow: none;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      border-radius: 10px;
+      background-color: var(--primary-color);
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.2rem;
+      color: #fff;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+     .giftModal .modal-title{
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+      .giftModal .modal-header{
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 2rem;
+      border-bottom: none;
+      padding-bottom: 0;
+      padding-left: 1rem;
+    }
+     .giftModal .listItem{
+     margin-bottom: 1.4rem;
+    }
+    .giftModal .listItem:nth-of-type(2) .method{
+     background-color: #000;
+    }
+    .giftModal .listItem .method{
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 1.7rem;
+    padding: .5rem 1.2rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    letter-spacing: .5px;
+    font-size: .9rem;
+    }
+    ul.custom-list {
+  list-style: none;
+  padding-left: .5rem;
+}
+
+ul.custom-list li::before {
+  content: "✔️"; 
+  margin-right: 1rem;
+  display: inline-block;
+  width: 1em;
+}
+ul.custom-list li {
+ color: #222;
+ font-weight: 500;
+ font-size: .9rem;
+ margin-bottom: .8rem;
+ display: flex;
+}
+.d-none{
+  display: none !important;
+}
+/* faqs */
+ .faq-section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .faq-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .faq-header h2 {
+      font-size: 2rem;
+      color: #2c3e50;
+    }
+
+ 
+
+    .faq-card {
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+      padding: 1.5rem;
+      transition: transform 0.3s ease;
+      margin-bottom: 1rem;
+    }
+
+    .faq-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .faq-question {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #34495e;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-answer {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .faq-answer p {
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-answer ul,
+    .faq-answer ol {
+      padding-left: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .faq-answer li {
+      margin-bottom: 0.4rem;
+    }
+
+    @media (max-width: 600px) {
+      .faq-header h2 {
+        font-size: 1.4rem;
+      }
+      .rewardStr h1 {
+        font-size: 1.4rem;
+        margin-top: 1rem;
+      }
+       .faq-section {
+      padding: 2rem 0;
+    }
+
+    }
+/* about */
+.about-store-section {
+          padding: 3rem .5rem;
+          background-color: #f2f4f8;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .about-container {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 1100px;
+          margin: auto;
+          gap: 2rem;
+          align-items: center;
+        }
+
+        .about-text {
+          flex: 1 1 500px;
+        }
+
+        .about-text h2 {
+          font-size: 2rem;
+          color: #2c3e50;
+          margin-bottom: 1rem;
+        }
+
+        .about-text p {
+          font-size: 1rem;
+          color: #555;
+          margin-bottom: 1rem;
+          line-height: 1.6;
+        }
+
+        .about-text ul,
+        .about-text ol {
+          padding-left: 25px;
+          margin-bottom: 1rem;
+        }
+        
+          .about-text ul {
+          list-style-type: disc;
+        }
+           .about-text ol {
+          list-style-type: decimal;
+        }
+
+        .about-text li {
+          margin-bottom: 0.5rem;
+          font-size: 0.95rem;
+          color: #333;
+        }
+
+
+        @media (max-width: 768px) {
+          .about-container {
+            flex-direction: column;
+          }
+
+          .about-text h2 {
+            font-size: 1.8rem;
+          }
+        }
+      /* top brand */
+       .topBrands{
+        padding: 2rem 0;
+         background: #f8fafc;
+    }
+    
+        .topBrands h2 {
+          font-size: 2rem;
+          color: #2c3e50;
+          margin-bottom: 1rem;
+        }
+    .brand-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 1.5rem 1rem;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      display: block;
+      min-height: 100%;
+    }
+
+    .brand-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand-grid .brand-logo {
+      width: 100px;
+      height: 80px;
+      object-fit: contain;
+    }
+
+    .brand-grid .brand-category {
+      color: #6b7280;
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .brand-grid .brand-name {
+      font-weight: 600;
+      color: #1f2937;
+      margin-bottom: 0.5rem;
+    }
+
+    .brand-grid .brand-discount {
+      font-weight: bold;
+      font-size: 0.95rem;
+      color: #E63946;
+    }
+
+    .brand-grid .discount-badge {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #003B94;
+      color: white;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+    
+
+    @media (max-width: 600px) {
+      .brand-grid .brand-card {
+        padding: 1rem;
+      }
+
+      .brand-grid .brand-logo {
+        width: 50px;
+        height: 50px;
+      }
+         .brand-grid .discount-badge {
+     
+      padding: 0.25rem 0.3rem;
+      font-size: 0.6rem;
+    }
+    .topBrands h2{
+      font-size: 1.4rem;
+    }
+    }

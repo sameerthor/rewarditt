@@ -80,3 +80,6 @@
     .userData{
         padding: 2rem 0;
     }
+    .userData table tr td a{
+      color: #1a0dab;;
+    }

@@ -523,6 +523,15 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
 
                 </div>
             </section>
+            <section className='checkOutgift'>
+               <div className="container">
+                    <a className="promo-card purple-gradient" href=''>
+                        <div className="promo-icon">🏷️</div>
+                        <div className="promo-text">Checkout {gift_card.store_name} Coupon Code</div>
+                        <div className="promo-arrow">→</div>
+                    </a>
+               </div>
+            </section>
             <section className='faqssec'>
                 <div className="container py-5">
                     <h2 className="mb-4 text-center secHeading">Frequently Asked Questions About {gift_card.store_name} Gift Cards</h2>
@@ -650,7 +659,11 @@ export default function GiftCardPage({ gift_card, faqs,toprated }) {
 
 
 export async function getStaticPaths() {
-    const res = await fetch('https://admin.scoopcost.com/gift-cards/');
+    const res = await fetch('https://admin.scoopcost.com/gift-cards/',{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+});
     const gift_cards = await res.json();
 
     const paths = gift_cards.map(store => ({
@@ -712,7 +725,11 @@ export async function getStaticProps({ params }) {
   const slug = params.slug;
 
   try {
-    const res = await fetch(`https://admin.scoopcost.com/gift-cards/${slug}/`);
+    const res = await fetch(`https://admin.scoopcost.com/gift-cards/${slug}/`,{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+});
 
     if (!res.ok) {
       console.error(`Failed to fetch gift card for slug: ${slug}. Status: ${res.status}`);
@@ -748,7 +765,11 @@ export async function getStaticProps({ params }) {
     delete gift_card.faqs;
 
     // Second fetch - handle errors
-    const res2 = await fetch(`https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false&id=${gift_card.id}`);
+    const res2 = await fetch(`https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false&id=${gift_card.id}`,{
+  headers: {
+    'x-api-key': process.env.SECRET_KEY, // must be defined in .env.local
+  },
+});
     let toprated = [];
 
     if (res2.ok && res2.headers.get('content-type')?.includes('application/json')) {

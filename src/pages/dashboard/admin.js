@@ -30,21 +30,21 @@ export default function AdminPage({ }) {
                         </thead>
                         <tbody>
                             <tr>
-                            <td><a href="/user">Aarav Sharma</a></td>
+                            <td><a href="/dashboard/user">Aarav Sharma</a></td>
                             <td>aarav@example.com</td>
                             <td>1200</td>
                             <td>800</td>
                             <td>100</td>
                             </tr>
                             <tr>
-                            <td>Diya Patel</td>
+                            <td><a href="/dashboard/user">Aarav Sharma</a></td>
                             <td>diya@example.com</td>
                             <td>950</td>
                             <td>600</td>
                             <td>50</td>
                             </tr>
                             <tr>
-                            <td>Rohit Singh</td>
+                           <td><a href="/dashboard/user">Aarav Sharma</a></td>
                             <td>rohit@example.com</td>
                             <td>1500</td>
                             <td>700</td>
