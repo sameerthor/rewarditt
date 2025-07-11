@@ -3,6 +3,7 @@ import MetaTags from '@/components/MetaTags';
 import Image from 'next/image';
 import Link from 'next/link';
 import "@/styles/user.css";
+import "@/styles/reward-history.css";
 import { useState, useEffect } from "react";
 
 
@@ -46,6 +47,82 @@ export default function singleUser({ }) {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section className='rewardHistoryPage'>
+                    <div className="container">
+                        <h1>Reward History</h1>
+
+                        <div className="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                    <th>Points</th>
+                                    <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>2025-06-10</td>
+                                    <td>Purchase at XYZ Store</td>
+                                    <td>+30</td>
+                                    <td className="status status-earned">Earned</td>
+                                    </tr>
+                                    <tr>
+                                    <td>2025-05-28</td>
+                                    <td>Redeemed for Gift Card</td>
+                                    <td>-20</td>
+                                    <td className="status status-redeemed">Redeemed</td>
+                                    </tr>
+                                    <tr>
+                                    <td>2025-03-14</td>
+                                    <td>Referral Bonus</td>
+                                    <td>+10</td>
+                                    <td className="status status-earned">Earned</td>
+                                    </tr>
+                                    <tr>
+                                    <td>2024-12-30</td>
+                                    <td>Unused Points</td>
+                                    <td>-15</td>
+                                    <td className="status status-expired">Expired</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            </section>
+            <section className='rewardHistoryPage'>
+                    <div className="container">
+                        <h2>Payment History</h2>
+
+                        <div className="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                    <th>Date</th>
+                                    <th>Action</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>2025-06-10</td>
+                                    <td>Self Transfer</td>
+                                    <td>$100</td>
+                                    <td className="status status-earned">Success</td>
+                                    </tr>
+                                    <tr>
+                                    <td>2024-12-30</td>
+                                    <td>Trasfer</td>
+                                    <td>$10</td>
+                                    <td className="status status-expired">Pendding</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
             </section>
         </>
     );
