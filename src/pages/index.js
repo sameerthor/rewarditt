@@ -29,7 +29,7 @@ export default function rewardPage({ }) {
                         <div className="col-md-7">
                             <div className='imgBox'>
                                 <Image
-                                    src="/images/reward.webp"
+                                    src="/images/reward-gift.webp"
                                     alt="reward"
                                     width={650}
                                     height={400}
