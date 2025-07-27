@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MAIN_DOMAIN = 'https://scoopcost.com'
+const MAIN_DOMAIN = 'https://rewarditt.com'
 
 export default function MainDomainLink({ href, children, ...props }) {
   const isInternal = href?.startsWith('/')

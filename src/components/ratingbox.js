@@ -108,10 +108,7 @@ export default function RatingBox({ store }) {
       </div>
 
       <div className="ratings">
-        <p>
-          {rating} <span>({totalRatings} Ratings)</span>
-        </p>
-        <button className="rate-btn" onClick={openRatingModal}>Rate this store</button>
+       
       </div>
       {(modalOpen) &&
         <div
