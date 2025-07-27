@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const https = require('https')
 
-const API_URL = 'https://admin.scoopcost.com/store-search/'
+const API_URL = 'https://admin.rewarditt.com/store-search/'
 const OUT_PATH = path.join(__dirname, '..', 'excluded-slugs.json')
 
 function fetchJson(url) {

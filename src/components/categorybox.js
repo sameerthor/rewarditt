@@ -8,7 +8,7 @@ export default function CategpryBox() {
 
     const [categories, setFilterdata] = useState([]);
     useEffect(() => {
-        axios.get('https://backend.scoopcost.com/categories&no_pagination=true')
+        axios.get('https://backend.rewarditt.com/categories&no_pagination=true')
             .then(function (response) {
                 setFilterdata(response.data);
             })

@@ -1,4 +1,4 @@
-const baseDomain = 'scoopcost.com'
+const baseDomain = 'rewarditt.com'
 
 const toUrl = (data) =>
   `<url><loc>${data.url}</loc></url>`
@@ -19,7 +19,7 @@ export async function getServerSideProps({ res }) {
   const urlList = []
 
   const result = await fetch(
-    'https://admin.scoopcost.com/store-search'
+    'https://admin.rewarditt.com/store-search'
   )
   const json = await result.json()
   const stores =  json

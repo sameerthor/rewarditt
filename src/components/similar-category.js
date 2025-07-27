@@ -8,7 +8,7 @@ export default function SimCat({category_id}) {
 
     const [categories, setFilterdata] = useState([]);
     useEffect(() => {
-        axios.get('https://backend.scoopcost.com/categories/?limit=8&offset='+(parseInt(category_id)+1))
+        axios.get('https://backend.rewarditt.com/categories/?limit=8&offset='+(parseInt(category_id)+1))
             .then(function (response) {
                 setFilterdata(response.data.results);
             })

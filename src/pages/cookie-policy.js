@@ -10,7 +10,7 @@ export default function cookiePolicy({ cookiePolicy }) {
     return (
         <>
             <NextSeo
-                title="Scoopcost.com - Cookie Policy"
+                title="Rewarditt.com - Cookie Policy"
                 description="Cookie Policy"
             />
             <section className="sitePolicy">            
@@ -18,7 +18,7 @@ export default function cookiePolicy({ cookiePolicy }) {
                     <div className="row">
                         <h1 className="text-center">Cookie Policy</h1>
                         <p>
-                                At ScoopCost, we use cookies to offer you a faster, smoother, and more personalized browsing experience. This Cookie Policy explains how ScoopCost (the “Website”, “we”, “our”, “us”) uses cookies and similar technologies to gather information when you visit our site. It also outlines how you can manage or control your cookie preferences. 
+                                At Rewarditt, we use cookies to offer you a faster, smoother, and more personalized browsing experience. This Cookie Policy explains how Rewarditt (the “Website”, “we”, “our”, “us”) uses cookies and similar technologies to gather information when you visit our site. It also outlines how you can manage or control your cookie preferences. 
                         </p>
                         <div className="h2">What are Cookies?</div>
                         <p>
@@ -36,7 +36,7 @@ export default function cookiePolicy({ cookiePolicy }) {
                         </p>
                         <div className="h2">Third-Party Cookies</div>
                         <p>
-                                In addition to our cookies, we may use cookies provided by trusted third parties. These include analytics services, advertising platforms or affiliate networks. These third party cookies may track your activity across multiple websites. Please note ScoopCost does not control these cookies and is not responsible for how third-parties handle your data. We recommend you to review their respective privacy and cookie policies for details. 
+                                In addition to our cookies, we may use cookies provided by trusted third parties. These include analytics services, advertising platforms or affiliate networks. These third party cookies may track your activity across multiple websites. Please note Rewarditt does not control these cookies and is not responsible for how third-parties handle your data. We recommend you to review their respective privacy and cookie policies for details. 
 
                         </p>
                         <div className="h2">How to Manage Your Cookie Preferences</div>
@@ -60,7 +60,7 @@ export default function cookiePolicy({ cookiePolicy }) {
 
                         </ul>
                         <p>
-                               <strong> Note:</strong> Disabling or blocking some cookies may affect how certain features or pages on ScoopCost work. 
+                               <strong> Note:</strong> Disabling or blocking some cookies may affect how certain features or pages on Rewarditt work. 
                         </p>
                         <div className="h2">Updates to this Cookie Policy</div>
                         <p>
@@ -68,11 +68,11 @@ export default function cookiePolicy({ cookiePolicy }) {
                         </p>
                         <div className="h2">Contact Us</div>
                         <p>
-                                If you have any questions or concerns about our Cookie Policy, reach out to us at <a href='https://scoopcost.com/contact'>https://scoopcost.com/contact</a>.
+                                If you have any questions or concerns about our Cookie Policy, reach out to us at <a href='https://rewarditt.com/contact'>https://rewarditt.com/contact</a>.
 
                         </p>
                         <p>
-                                By using ScoopCost, you consent to use cookies as described in this Cookie Policy.
+                                By using Rewarditt, you consent to use cookies as described in this Cookie Policy.
                         </p>
                    </div> 
                 </div>   

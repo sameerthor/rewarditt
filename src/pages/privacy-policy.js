@@ -10,7 +10,7 @@ export default function privacyPolicy({ privacyPolicy }) {
     return (
         <>
             <NextSeo
-                title="Scoopcost.com - Privacy Policy"
+                title="Rewarditt.com - Privacy Policy"
                 description="Privacy Policy"
             />
             <section className="sitePolicy">            
@@ -18,7 +18,7 @@ export default function privacyPolicy({ privacyPolicy }) {
                     <div className="row">
                         <h1 className='text-center'>  Privacy Policy </h1>
                         <p>
-                                ScoopCost (“us”, “we”, or “our”) operates the website <a href="https://scoopcost.com/">https://scoopcost.com/</a> (the “Site” or “Service”). This Privacy Policy explains how we collect, use and protect your information when you use our website. By visiting or using ScoopCost, you agree to the terms outlined in this policy. 
+                                Rewarditt (“us”, “we”, or “our”) operates the website <a href="https://rewarditt.com/">https://rewarditt.com/</a> (the “Site” or “Service”). This Privacy Policy explains how we collect, use and protect your information when you use our website. By visiting or using Rewarditt, you agree to the terms outlined in this policy. 
                         </p>
                        <div className="h2">Information We Collect</div>
                        <p>To provide you with the best experience, we collect a few different types of information: </p>
@@ -28,7 +28,7 @@ export default function privacyPolicy({ privacyPolicy }) {
                        </p>
                        <p><strong>ii. Non-Personal Data:</strong></p>
                        <p>
-                            If you visit ScoopCost, we automatically collect some technical information such as IP address, browser type, device information, pages visited, time on the site and more. This helps us know how our website is being used and how we can make it better.
+                            If you visit Rewarditt, we automatically collect some technical information such as IP address, browser type, device information, pages visited, time on the site and more. This helps us know how our website is being used and how we can make it better.
                        </p>
                        <div className="h2">Usage of Information</div>
                        <p>We use your data to:</p>
@@ -56,21 +56,21 @@ export default function privacyPolicy({ privacyPolicy }) {
                        </p>
                        <div className="h2">Service Providers</div>
                        <p>
-                            ScoopCost may use services or tools provided by third parties. These third-parties may have access to some of your data, but only help us run our website efficiently. They are not allowed to use your data for anything beyond the tasks they perform for us.
+                            Rewarditt may use services or tools provided by third parties. These third-parties may have access to some of your data, but only help us run our website efficiently. They are not allowed to use your data for anything beyond the tasks they perform for us.
                        </p>
                        <div className="h2">Links to Third-Party Websites</div>
                        <p>
                             Our website contains links to other websites (usually third-party brands/retailers). Please note that we don’t control these websites and we are not responsible for their content or privacy practices. We encourage you to review their privacy policies before sharing any information with them.
                        </p>
                        <div className="h2">Children’s Privacy</div>
-                       <p>ScoopCost is meant for users aged 18 and older. We do not knowingly collect personal data from anyone under the age of 18. If you believe your child has shared personal information with us, please contact us. We take steps to remove the information from our servers.</p>
+                       <p>Rewarditt is meant for users aged 18 and older. We do not knowingly collect personal data from anyone under the age of 18. If you believe your child has shared personal information with us, please contact us. We take steps to remove the information from our servers.</p>
                        <div className="h2">Changes To This Privacy Policy</div>
                        <p>
                             We may update this Privacy Policy from time to time. If we make changes, we’ll notify you by posting the new Privacy Policy on the site and also update the effective date at the top of this Privacy Policy. You are advised to check back our Privacy Policy occasionally for any changes.
                        </p>
                        <div className="h2">Contact Us</div>
-                       <p>Have questions about our privacy practices? Reach out to us at <a href="https://scoopcost.com/contact">https://scoopcost.com/contact</a>.</p>
-                       <p>By using ScoopCost, you consent to the terms mentioned in this Privacy Policy.</p>
+                       <p>Have questions about our privacy practices? Reach out to us at <a href="https://rewarditt.com/contact">https://rewarditt.com/contact</a>.</p>
+                       <p>By using Rewarditt, you consent to the terms mentioned in this Privacy Policy.</p>
                     </div>
                 </div>   
             </section>

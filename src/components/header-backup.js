@@ -18,8 +18,8 @@ export default function Header() {
 
   const fetchData = () => {
     Promise.all([
-      axios.get("https://admin.scoopcost.com/giftcard-page/alphabetical-filter/?paginate=false"),
-      axios.get("https://admin.scoopcost.com/store-search")
+      axios.get("https://admin.rewarditt.com/giftcard-page/alphabetical-filter/?paginate=false"),
+      axios.get("https://admin.rewarditt.com/store-search")
     ])
       .then(([giftCardRes, storeRes]) => {
         const giftCards = (giftCardRes.data || []).map(gift_card => ({
@@ -114,9 +114,9 @@ export default function Header() {
                           const { key, is_gift_card } = record.item
 
                           if (is_gift_card) {
-                            window.location.href = `https://scoopcost.com/gift-card/${key}`
+                            window.location.href = `https://rewarditt.com/gift-card/${key}`
                           } else {
-                            window.location.href = `https://scoopcost.com/${key}`
+                            window.location.href = `https://rewarditt.com/${key}`
                           }
                         }}
                         leftIcon={<svg
@@ -215,9 +215,9 @@ export default function Header() {
                           const { key, is_gift_card } = record.item
 
                           if (is_gift_card) {
-                            window.location.href = `https://scoopcost.com/gift-card/${key}`
+                            window.location.href = `https://rewarditt.com/gift-card/${key}`
                           } else {
-                            window.location.href = `https://scoopcost.com/${key}`
+                            window.location.href = `https://rewarditt.com/${key}`
                           }
                         }}
                         leftIcon={<svg

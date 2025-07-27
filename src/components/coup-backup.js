@@ -73,7 +73,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   async function trackCouponUsage(couponComponentId) {
     try {
       const response = await fetch(
-        `https://admin.scoopcost.com/api/stores/${storeId}/coupons/${couponComponentId}/track-usage`,
+        `https://admin.rewarditt.com/api/stores/${storeId}/coupons/${couponComponentId}/track-usage`,
         {
           method: 'POST',
           headers: {
@@ -91,7 +91,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
   async function isWorked(couponComponentId, is_worked) {
     try {
       const response = await fetch(
-        `https://admin.scoopcost.com/api/stores/${storeId}/coupons/${couponComponentId}/is-worked`,
+        `https://admin.rewarditt.com/api/stores/${storeId}/coupons/${couponComponentId}/is-worked`,
         {
           method: 'POST',
           headers: {

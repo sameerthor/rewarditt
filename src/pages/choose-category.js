@@ -32,7 +32,7 @@ export default function catType({ categories,topRatedStores,featuredStores,topOn
     return (
         <>
             <NextSeo
-                title="Choose Category - Scoopcost.com"
+                title="Choose Category - Rewarditt.com"
                 description="Choose your category between Giftcards and Coupons. We bring you different categories for both Gift card and coupons"
             />
             <MetaTags />

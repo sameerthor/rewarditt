@@ -36,7 +36,7 @@ const getHeading = (title) => {
 
   return "";
 };
-const baseDomain = 'scoopcost.com';
+const baseDomain = 'rewarditt.com';
 
 export default function Coupon({ expiryDate, index, coupon, storeImage, storeName, affiliateUrl, homeUrl, storeSlug, storeId, storeCreateTime, usesSubdomain }) {
   const [worked, setWorked] = useState(coupon.is_worked);
@@ -89,7 +89,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
     setTotalUsed(totalUsed + 1);
     try {
       const response = await fetch(
-        `https://admin.scoopcost.com/stores/${storeSlug}/track-coupon-usage/${couponComponentId}/`,
+        `https://admin.rewarditt.com/stores/${storeSlug}/track-coupon-usage/${couponComponentId}/`,
         {
           method: 'POST',
           headers: {
@@ -108,7 +108,7 @@ export default function Coupon({ expiryDate, index, coupon, storeImage, storeNam
     setTotalUsed(totalUsed + 1);
     try {
       const response = await fetch(
-        `https://admin.scoopcost.com/stores/${storeSlug}/coupon-worked/${couponComponentId}/`,
+        `https://admin.rewarditt.com/stores/${storeSlug}/coupon-worked/${couponComponentId}/`,
         {
           method: 'POST',
           headers: {

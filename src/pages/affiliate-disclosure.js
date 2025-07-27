@@ -10,7 +10,7 @@ export default function affiliateDisclosure({ affiliateDisclosure }) {
     return (
         <>
             <NextSeo
-                title="Scoopcost.com - Affiliate Disclosure"
+                title="Rewarditt.com - Affiliate Disclosure"
                 description="Affiliate Disclosure"
             />
 
@@ -19,7 +19,7 @@ export default function affiliateDisclosure({ affiliateDisclosure }) {
                     <div className="row">
                         <h1 className="text-center">Affiliate Disclosure</h1>
                         <p>
-                                At ScoopCost, transparency is our priority. Our mission is to help users save money by finding and sharing the best deals, coupons and e-gift cards from around the web. To keep our ScoopCost (the “Website”) running, we participate in affiliate marketing programs.
+                                At Rewarditt, transparency is our priority. Our mission is to help users save money by finding and sharing the best deals, coupons and e-gift cards from around the web. To keep our Rewarditt (the “Website”) running, we participate in affiliate marketing programs.
 
                         </p>
                         <p>
@@ -32,19 +32,19 @@ export default function affiliateDisclosure({ affiliateDisclosure }) {
                                 While we appreciate your support when you use our affiliate links, the decision to purchase any product or service is yours. You are under no obligation to click on our affiliate links or make a purchase. You are free to bypass our links and visit the retailer directly if you choose.  If you choose to shop through our links, it truly supports what we do and we appreciate it.
                         </p>
                         <p>
-                                ScoopCost does not own or sell any of the products or services listed on our site. We are an independent platform that brings promo codes and gift cards from third-party retailers. We may earn commission on your purchases but our recommendations are not influenced by this. Also, we do not receive any free products or incentives for featuring online stores on our site.
+                                Rewarditt does not own or sell any of the products or services listed on our site. We are an independent platform that brings promo codes and gift cards from third-party retailers. We may earn commission on your purchases but our recommendations are not influenced by this. Also, we do not receive any free products or incentives for featuring online stores on our site.
                         </p>
                         <p>
-                                Please note that ScoopCost does not own, guarantee, or endorse any products, services or businesses available on our website. Retailers may change or remove offers without notice and terms of use will vary depending on the store. Our team does their best to list the deals & discount codes that are accurate and up to date. But we cannot guarantee their validity at all times. 
+                                Please note that Rewarditt does not own, guarantee, or endorse any products, services or businesses available on our website. Retailers may change or remove offers without notice and terms of use will vary depending on the store. Our team does their best to list the deals & discount codes that are accurate and up to date. But we cannot guarantee their validity at all times. 
                         </p>
                         <p>
                                 We always recommend you to research before making any purchases. Read the fine print, check reviews and research before making any purchase. Any issue with your order regarding product quality or delivery should be directed to the seller from whom you made the purchase. 
                         </p>
                         <div className="h2">Got Questions? </div>
                         <p>
-                                If you have any questions about our affiliate disclosure policy, feel free to contact us at <a href="https://scoopcost.com/contact">https://scoopcost.com/contact</a> and we will be happy to assist you.
+                                If you have any questions about our affiliate disclosure policy, feel free to contact us at <a href="https://rewarditt.com/contact">https://rewarditt.com/contact</a> and we will be happy to assist you.
                         </p>
-                        <p>By using ScoopCost, you agree to this Affiliate Disclosure Policy.</p>
+                        <p>By using Rewarditt, you agree to this Affiliate Disclosure Policy.</p>
                     </div> 
                 </div>   
             </section>        
