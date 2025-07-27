@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "@/styles/a-z.css";
-import Image from 'next/image';
 import { NextSeo } from "next-seo";
-import MainDomainLink from '@/components/MainDomainLink';
+import Link from "next/link";
 const baseDomain = "rewarditt.com"
 export default function Stores({ initialStoreData }) {
     console.log(initialStoreData)
