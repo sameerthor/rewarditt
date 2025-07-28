@@ -23,7 +23,7 @@ export default function Store({ store, relStores, faqs }) {
       <section className='rewardStr'>
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 hideOnePhone">
               <div className='banner'>
                 <Image
                   src="/images/reward.webp"
@@ -33,7 +33,7 @@ export default function Store({ store, relStores, faqs }) {
                 />
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 noPadding">
               <div className='pageHead'>
                 <h1>Get 100 Reward points on {store.title}  and coupons</h1>
                 <div className="barndInfo">
@@ -92,54 +92,53 @@ export default function Store({ store, relStores, faqs }) {
         </div>
       </section>
       {/* faqs */}
-      <section className="faq-section">
-        <div className="container">
-          <div className="faq-header">
-            <h2>Frequently Asked Questions</h2>
-          </div>
-          <div className="faq-list">
-            {faqs.map((item, index) => (
-              <div className="faq-card" key={index}>
-                <div
-                  className="faq-question"
-                  dangerouslySetInnerHTML={{ __html: item.question }}
-                ></div>
-                <div
-                  className="faq-answer"
-                  dangerouslySetInnerHTML={{ __html: item.answer }}
-                ></div>
-              </div>
-            ))}
+      <section className='faqssec'>
+        <div className="container py-5">
+            <h2 className="mb-4 text-center secHeading">Frequently Asked Questions About {store.title}  Gift Cards</h2>
 
+            <div className="accordion" id="giftCardFaq">
+                {faqs.map((item, index) => {
+                    const faqId = `faq${index + 1}`;
+                    const collapseId = `collapse${index + 1}`;
+                    const isFirst = index === 0;
 
-          </div>
+                    return (
+                        <div className="accordion-item" key={index}>
+                            <h2 className="accordion-header" id={faqId}>
+                                <button
+                                    className={`accordion-button ${!isFirst ? 'collapsed' : ''}`}
+                                    type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target={`#${collapseId}`}
+                                    aria-expanded={isFirst ? 'true' : 'false'}
+                                    aria-controls={collapseId}
+                                >
+                                    <div
+                                        className="faq-question"
+                                        dangerouslySetInnerHTML={{ __html: item.question }}
+                                      ></div>
+                                </button>
+                            </h2>
+                            <div
+                                id={collapseId}
+                                className={`accordion-collapse collapse ${isFirst ? 'show' : ''}`}
+                                aria-labelledby={faqId}
+                                data-bs-parent="#giftCardFaq"
+                            >
+                                <div
+                                    className="accordion-body"
+                                    dangerouslySetInnerHTML={{ __html: item.answer }}
+                                />
+                                
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
+
         </div>
       </section>
-      <section className="topBrands brand-grid">
-        <div className="container">
-          <h2 className='secHeading'>Top Rated Brands</h2>
-          <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
-            
-            {relStores.map((item, index) => (
-              <div key={index} className="col mb-5">
-                <a className="brand-card" href="#">
-                  <Image
-                    className="brand-logo"
-                    width={80}
-                    height={80}
-                    src={item.image}
-                    loading="lazy"
-                    alt={`${item.title} image`}
-                  />
-                  <div className="brand-name">{item.title}</div>
-                  <div className="discount-badge">Get 200 Points</div>
-                </a>
-              </div>
-            ))}
 
-          </div>
-        </div>
-      </section>
       {/* modal */}
       <div
         className="modal fade giftModal"

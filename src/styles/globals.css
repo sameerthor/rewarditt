@@ -728,6 +728,10 @@ font-weight: 600;
         padding-top: 0;
         padding-bottom: 0;
       }
+      .react-search-box-dropdown{
+        top: 70px;
+      }
+
   }
  
 
