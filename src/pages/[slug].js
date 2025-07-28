@@ -23,7 +23,7 @@ export default function Store({ store, relStores, faqs }) {
       <section className='rewardStr'>
         <div className="container">
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 hideOnePhone">
               <div className='banner'>
                 <Image
                   src="/images/reward.webp"
@@ -33,7 +33,7 @@ export default function Store({ store, relStores, faqs }) {
                 />
               </div>
             </div>
-            <div className="col-md-6">
+            <div className="col-md-6 noPadding">
               <div className='pageHead'>
                 <h1>Get 100 Reward points on {store.title}  and coupons</h1>
                 <div className="barndInfo">

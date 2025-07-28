@@ -44,7 +44,7 @@ export default function registerPage({ }) {
 
                     <div className='text-center'>
                         <button type="submit" className="login-btn">
-                            LOGIN
+                            Register
                         </button>
                     </div>
                     <div className='txt'>
