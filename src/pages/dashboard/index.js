@@ -106,7 +106,7 @@ export default function singleUser({ }) {
                     </div>
                 </div>
             </section>
-            <section className='rewardHistoryPage'>
+            {/* <section className='rewardHistoryPage'>
                 <div className="container">
                     <h1>Reward History</h1>
 
@@ -149,7 +149,7 @@ export default function singleUser({ }) {
                         </table>
                     </div>
                 </div>
-            </section>
+            </section> */}
          
         </>
     );
