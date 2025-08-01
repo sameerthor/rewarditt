@@ -39,18 +39,18 @@ export default function catType({ categories,topRatedStores,featuredStores,topOn
             <section className='catType'>
                     <div className="container">
                         <div className="row row-cols-md-4">
-                            <div className="col">
-                                <Link href="/coupon/category" class="card">
-                                    <div className="card-icon">🎟️</div>
+                            <div className="col mb-3">
+                                <Link href="" class="card">
+                                    <div className="card-icon">🏷️</div>
                                     <h2>Coupons</h2>
-                                    <p>Browse exclusive discounts and deals on top brands.</p>
+                                    <p>Earn exclusive deals and discount on top brands.</p>
                                 </Link>
                             </div>
-                            <div className='col'>
-                                <Link href="/gift-card/category" class="card">
-                                    <div className="card-icon">🎁</div>
-                                    <h2>Gift Cards</h2>
-                                    <p>Shop gift cards for any occasion, any brand.</p>
+                            <div className='col mb-3'>
+                                <Link href="" class="card">
+                                    <div className="card-icon">💰</div>
+                                    <h2>Rewards</h2>
+                                    <p>Earn rewards on top brands</p>
                                 </Link>
                             </div>
                         </div>

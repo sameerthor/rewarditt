@@ -181,6 +181,11 @@ export default function Header() {
                 Blog
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" prefetch={false} href="/category">
+                Category
+              </Link>
+            </li>
           </ul>
         </div>
         <ResponsiveRender
