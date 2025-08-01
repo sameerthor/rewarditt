@@ -22,10 +22,11 @@ export default function rewardPage({ }) {
                             <div className='txtBox'>
                                 <small className='hashTag'>#getReward</small>
                                 <h1>Get Guaranteed Rewards on every <span>Qualified Purchase</span></h1>
-                                <a href="" className='joinNow'>Join Today!</a>
-                                <p>Already have an account? <a href="">Login Now</a></p>
+                                <a href="/register" className='joinNow'>Join Today!</a>
+                                <p>Already have an account? <a href="/login">Login Now</a></p>
                             </div>
                         </div>
+                        
                         <div className="col-md-7">
                             <div className='imgBox'>
                                 <Image
@@ -40,7 +41,7 @@ export default function rewardPage({ }) {
                     </div>
                 </div>
             </section>
-            <section className='usersection'>
+            {/* <section className='usersection'>
                 <div className="container">
                     <div className='userBox'>
                             <div className='userName'>Hi, MS DHONI</div>
@@ -56,7 +57,7 @@ export default function rewardPage({ }) {
                             </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <section className="rewards-section">
                 <div className="container" style={{borderBottom: "1px solid #ccc"}}>
                      <h2>Ways to Earn Points</h2>
@@ -176,6 +177,88 @@ export default function rewardPage({ }) {
                                 <button type="submit" class="btn btn-subscribe w-100">Subscribe</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </section>
+            <section className='topBrands brand-grid'>
+                <div className="container">
+                    <h2 className="secHeading"> Get Reward on Top Rated Brands</h2>
+                    <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
+                        <div className='col mb-5'>
+                            
+                            <a href="" className='brand-card'>
+                                <Image
+                                    className='brand-logo'
+                                    src="/images/800-kicks.webp"
+                                    alt="brand-logo"
+                                    width={50}
+                                    height={50}
+                                    loading="lazy"
+                                />
+                                <div className="brand-name">8000Kicks</div>
+                                <div className="discount-badge">Footwear</div>
+                            </a>
+                        </div>
+                         <div className='col mb-5'>
+                            
+                            <a href="" className='brand-card'>
+                                <Image
+                                    className='brand-logo'
+                                    src="/images/800-kicks.webp"
+                                    alt="brand-logo"
+                                    width={50}
+                                    height={50}
+                                    loading="lazy"
+                                />
+                                <div className="brand-name">8000Kicks</div>
+                                <div className="discount-badge">Footwear</div>
+                            </a>
+                        </div>
+                         <div className='col mb-5'>
+                            
+                            <a href="" className='brand-card'>
+                                <Image
+                                    className='brand-logo'
+                                    src="/images/800-kicks.webp"
+                                    alt="brand-logo"
+                                    width={50}
+                                    height={50}
+                                    loading="lazy"
+                                />
+                                <div className="brand-name">8000Kicks</div>
+                                <div className="discount-badge">Footwear</div>
+                            </a>
+                        </div>
+                         <div className='col mb-5'>
+                            
+                            <a href="" className='brand-card'>
+                                <Image
+                                    className='brand-logo'
+                                    src="/images/800-kicks.webp"
+                                    alt="brand-logo"
+                                    width={50}
+                                    height={50}
+                                    loading="lazy"
+                                />
+                                <div className="brand-name">8000Kicks</div>
+                                <div className="discount-badge">Footwear</div>
+                            </a>
+                        </div>
+                         <div className='col mb-5'>
+                            
+                            <a href="" className='brand-card'>
+                                <Image
+                                    className='brand-logo'
+                                    src="/images/800-kicks.webp"
+                                    alt="brand-logo"
+                                    width={50}
+                                    height={50}
+                                    loading="lazy"
+                                />
+                                <div className="brand-name">8000Kicks</div>
+                                <div className="discount-badge">Footwear</div>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>

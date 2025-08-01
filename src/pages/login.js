@@ -101,6 +101,7 @@ export default function loginPage() {
 
 
 export async function getServerSideProps(context) {
+  const { parse } = await import('cookie'); // ✅ Import only on the server
   const cookies = parse(context.req.headers.cookie || '');
   const token = cookies.auth_token;
 

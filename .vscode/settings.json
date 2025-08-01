@@ -1,3 +1,25 @@
 {
-    "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "json.schemas": [],
+
+  // ✅ Emmet in JS/TS files (important for Next.js)
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+  "emmet.triggerExpansionOnTab": true,
+
+  // ✅ Auto-suggestions in JSX/TSX
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+
+  // ✅ Optional: Auto-close brackets and tags
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "html.autoClosingTags": true,
+  "html.autoClosingQuotes": true
 }

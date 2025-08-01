@@ -1,12 +1,45 @@
 .rewardStr{
     padding: 3rem 0;
 }
-.rewardStr h1{
+.implinks{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 10px;
+    }
+    .implinks button{
+     border: none;
+     outline: none;
+     background-color: transparent;
+    color: #1a0dab;
+    font-size: .9rem;
+    font-weight: 500;
+    }
+  .implinks button:hover{
+   text-decoration: underline;
+    }
+.rewardStr .rewdheading{
    font-weight: 600;
    font-size: 1.8rem;
 }
+.bgImg {
+  position: relative;
+  z-index: 0;
+}
+
+ .bgImg::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-image: url(/images/reward-gift.webp); /* no ../../public */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1; /* very transparent */
+  z-index: -1;
+}
 .rewardStr .banner img{
-   /* object-fit: contain; */
    border-radius: 250px;
    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
    max-width: 100%;
@@ -69,6 +102,62 @@
 }
 .infoBox .infoItem button:hover{
     text-decoration: underline;
+}
+.container{
+    max-width: 1200px;
+}
+.rewardPage .imgBox img{
+    object-fit: contain;
+    max-width: 100%;
+}
+.rewardPage .txtBox{
+    text-align: center;
+}
+.rewardPage .txtBox h1{
+   font-weight: 600;
+   font-size: 2.6rem;
+   line-height: 1.4;
+   margin-bottom: 1rem;
+}
+.rewardPage .txtBox h1 span{
+   color: var(--primary-color);
+   display: inline-block;
+}
+.rewardPage .txtBox .joinNow{
+    padding: .5rem 1rem;
+    display: inline-block;
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    margin-bottom: 1.1rem;
+    transition: all 0.3s ease-in-out;
+}
+.rewardPage .txtBox .joinNow:hover{
+   background-color: var(--primary-color);
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+.rewardPage .txtBox p {
+   font-weight: 500;
+   font-size: 1rem;
+   color: #333;
+}
+.rewardPage .txtBox p a{
+   color: var(--primary-color);
+
+}
+.rewardPage .txtBox p a:hover{
+   text-decoration: underline;
+}
+.rewardPage .hashTag{
+    color: #999;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.4;
+}
+@media(max-width: 550px){
+    .rewardPage .txtBox h1 {
+    font-size: 1.6rem;
+}
 }
 /* modal */
  .giftModal .modal-dialog{
@@ -199,7 +288,7 @@ ul.custom-list li {
       .faq-header h2 {
         font-size: 1.4rem;
       }
-      .rewardStr h1 {
+      .rewardStr .rewdheading {
         font-size: 1.4rem;
         margin-top: 1rem;
       }
@@ -208,12 +297,6 @@ ul.custom-list li {
     }
 
     }
-/* about */
-.about-store-section {
-          padding: 3rem .5rem;
-          background-color: #f2f4f8;
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
 
         .about-container {
           display: flex;
@@ -260,6 +343,7 @@ ul.custom-list li {
         @media (max-width: 768px) {
           .about-container {
             flex-direction: column;
+            padding: .5rem;
           }
 
           .about-text h2 {
@@ -450,3 +534,67 @@ ul.custom-list li {
  .faqssec{
   padding: 2rem 0;
  }
+ /* reward-section */
+.rewards-section {
+          padding: 30px 20px;
+          text-align: center;
+        }
+
+        .rewards-section h2 {
+          font-weight: 600;
+          font-size: 2.2rem;
+          margin-bottom: 40px;
+          color: #4B0082;
+        }
+
+        .reward-box {
+          margin-bottom: 40px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+          padding: 20px;
+          border-radius: 12px;
+        }
+
+        .reward-box:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+          background-color: #f9f9f9;
+        }
+
+        .reward-icon {
+          font-size: 40px;
+          color: #4B9E9E;
+          margin-bottom: 15px;
+        }
+
+        .reward-title {
+          font-weight: 700;
+          font-size: 1.2rem;
+          color: #111;
+        }
+
+        .reward-desc {
+          color: #6c757d;
+          font-size: 0.95rem;
+          margin-top: 5px;
+        }
+        @media(max-width:560px){
+            .rewards-section h2 {
+                font-size: 1.4rem;
+                margin-bottom: 1rem;
+            }
+            .rewardPage{
+                padding-bottom: 0;
+            }
+            .rewards-section{
+                padding-top: 0;
+            }
+            .reward-box{
+                margin-bottom: 10px;
+            }
+        }
+    .headingone{
+    font-weight: 600;
+    font-size: 2.6rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    }
