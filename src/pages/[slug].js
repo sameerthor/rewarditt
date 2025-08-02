@@ -268,6 +268,88 @@ export default function Store({ store, relStores, faqs }) {
               </div>
           </div>
       </section>
+       <section className='topBrands brand-grid'>
+          <div className="container">
+              <h2 className="secHeading"> Get Reward on Top Rated Brands</h2>
+              <div className="row row-cols-lg-5 row-col-md-3 row-cols-2">
+                  <div className='col mb-5'>
+                      
+                      <a href="" className='brand-card'>
+                          <Image
+                              className='brand-logo'
+                              src="/images/800-kicks.webp"
+                              alt="brand-logo"
+                              width={50}
+                              height={50}
+                              loading="lazy"
+                          />
+                          <div className="brand-name">8000Kicks</div>
+                          <div className="discount-badge">Footwear</div>
+                      </a>
+                  </div>
+                    <div className='col mb-5'>
+                      
+                      <a href="" className='brand-card'>
+                          <Image
+                              className='brand-logo'
+                              src="/images/800-kicks.webp"
+                              alt="brand-logo"
+                              width={50}
+                              height={50}
+                              loading="lazy"
+                          />
+                          <div className="brand-name">8000Kicks</div>
+                          <div className="discount-badge">Footwear</div>
+                      </a>
+                  </div>
+                    <div className='col mb-5'>
+                      
+                      <a href="" className='brand-card'>
+                          <Image
+                              className='brand-logo'
+                              src="/images/800-kicks.webp"
+                              alt="brand-logo"
+                              width={50}
+                              height={50}
+                              loading="lazy"
+                          />
+                          <div className="brand-name">8000Kicks</div>
+                          <div className="discount-badge">Footwear</div>
+                      </a>
+                  </div>
+                    <div className='col mb-5'>
+                      
+                      <a href="" className='brand-card'>
+                          <Image
+                              className='brand-logo'
+                              src="/images/800-kicks.webp"
+                              alt="brand-logo"
+                              width={50}
+                              height={50}
+                              loading="lazy"
+                          />
+                          <div className="brand-name">8000Kicks</div>
+                          <div className="discount-badge">Footwear</div>
+                      </a>
+                  </div>
+                    <div className='col mb-5'>
+                      
+                      <a href="" className='brand-card'>
+                          <Image
+                              className='brand-logo'
+                              src="/images/800-kicks.webp"
+                              alt="brand-logo"
+                              width={50}
+                              height={50}
+                              loading="lazy"
+                          />
+                          <div className="brand-name">8000Kicks</div>
+                          <div className="discount-badge">Footwear</div>
+                      </a>
+                  </div>
+              </div>
+          </div>
+       </section>
 
       {/* modal */}
       <div
