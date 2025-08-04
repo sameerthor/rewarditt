@@ -73,7 +73,7 @@
         .reward-box {
           margin-bottom: 40px;
           transition: transform 0.3s ease, box-shadow 0.3s ease;
-          padding: 20px;
+          padding: 10px;
           border-radius: 12px;
         }
 

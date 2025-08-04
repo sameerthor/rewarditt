@@ -266,8 +266,7 @@ width: 16px;
 fill: #ff0000;
 }
 .reedeemRules{
-  max-width: 400px;
-  margin: auto;
+ 
   text-align: left;
 }
 .reedeemRules ul{
@@ -282,4 +281,12 @@ font-size: .9rem;
 }
 .rewards-section.redemrulesbox{
   padding: 0;
+}
+
+.redemrulesbox .container{
+  max-width: 800px;
+}
+.redemrulesbox .container h2{
+  text-align: left;
+  margin-bottom: 1rem;
 }

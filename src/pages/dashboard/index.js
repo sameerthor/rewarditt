@@ -15,10 +15,10 @@ import ReactSearchBox from 'react-search-box';
 import { useRouter } from 'next/router';
 
 
-export default function singleUser({ }) {
+export default function singleUser({ data }) {
 
 
-    const router = useRouter();
+  const router = useRouter();
   const [filterdata, setFilterdata] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
   const searchRef = useRef(null);
@@ -83,20 +83,25 @@ export default function singleUser({ }) {
         checkBankDetails();
     }, []);
     
-     const [uploadedImage, setUploadedImage] = useState(null);
+    //upload
+   const [images, setImages] = useState({});
 
-  // Step 2: Add event handlers
-  const handleFileChange = (e) => {
+  const handleImageChange = (e, rowId) => {
     const file = e.target.files[0];
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setUploadedImage(imageUrl);
+      const imgUrl = URL.createObjectURL(file);
+      setImages((prev) => ({ ...prev, [rowId]: imgUrl }));
     }
   };
 
-  const handleDelete = () => {
-    setUploadedImage(null);
+  const handleDelete = (rowId) => {
+    setImages((prev) => {
+      const updated = { ...prev };
+      delete updated[rowId];
+      return updated;
+    });
   };
+
 
 
     return (
@@ -181,8 +186,9 @@ export default function singleUser({ }) {
             </section>
              <section className="rewards-section redemrulesbox">
                 <div className="container" style={{borderBottom: "1px solid #ccc"}}>
-                    <h2>Rules to to reedeem your reward points</h2>
-                     <div className="reedeemRules">
+                    <div className='redeemRulesContainer'>
+                        <h2>Rules to to reedeem your reward points</h2>
+                        <div className="reedeemRules">
                         <ul>
                             <li>For every 1000 points you can redeem $20</li>
                             <li>For every 2000 points you can redeem $40</li>
@@ -191,13 +197,14 @@ export default function singleUser({ }) {
                              <li>You must use our referral link to claim points</li>
                             <li>You must 1000 points to redeem cash</li>
                         </ul>
-                     </div>
+                    </div>
+                    </div>
                 </div>
             </section>
             <section className="rewards-section">
                 <div className="container" style={{borderBottom: "1px solid #ccc"}}>
                         <h2>Ways to Earn Points</h2>
-                    <div className="row row-cols-lg-4 row-cols-md-2 row-cols-1">
+                    <div className="row row-cols-lg-5 row-cols-md-2 row-cols-1">
                         <div className="col">
                             <div className="reward-box">
                                 <div className="reward-icon">👤</div>
@@ -222,16 +229,16 @@ export default function singleUser({ }) {
                         </div>
                         <div className="col">
                             <div className="reward-box">
-                                <div className="reward-icon">🎂</div>
-                                <div className="reward-title">30 Points</div>
-                                <div className="reward-desc">If our coupon code does not work (You must use our referral link to claim points)</div>
+                                <div className="reward-icon">👬</div>
+                                <div className="reward-title">50 Points</div>
+                                <div className="reward-desc">Refer a friend </div>
                             </div>
                         </div>
                         <div className="col">
                             <div className="reward-box">
-                                <div className="reward-icon">🎂</div>
-                                <div className="reward-title">50 Points</div>
-                                <div className="reward-desc">Refer a friend </div>
+                                <div className="reward-icon">🏷️</div>
+                                <div className="reward-title">30 Points</div>
+                                <div className="reward-desc">If our coupon code does not work (You must use our referral link to claim points)</div>
                             </div>
                         </div>
 
@@ -254,62 +261,15 @@ export default function singleUser({ }) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                {/* <tr>
                                 <td>2025-06-10</td>
                                 <td>Purchase at XYZ Store</td>
                                 <td>+30</td>
                                 <td className="status status-earned">Earned</td>
                                
-                                <td>
-                                    <div className="btnBox">
-                                    {uploadedImage ? (
-                                        <>
-                                        <button
-                                            data-bs-toggle="modal"
-                                            className="showScreenShot"
-                                            data-bs-target="#showScreenShot"
-                                            aria-label="screen-shot"
-                                            title="screenshot"
-                                        >
-                                            <Image
-                                            width={50}
-                                            height={50}
-                                            src={uploadedImage}
-                                            alt="Screenshot"
-                                            />
-                                        </button>
-                                        <button
-                                            className="deletebtn"
-                                            onClick={handleDelete}
-                                            aria-label="delete-screenshot"
-                                            title="delete-screenshot"
-                                        >
-                                            <Image
-                                            width={20}
-                                            height={20}
-                                            src="/images/trash.svg"
-                                            alt="Delete"
-                                            />
-                                        </button>
-                                        </>
-                                    ) : (
-                                        <div className="upload-container">
-                                        <label htmlFor="file-upload" className="custom-upload">
-                                            Upload screenshot
-                                        </label>
-                                        <input
-                                            id="file-upload"
-                                            type="file"
-                                            className="hidden-input"
-                                            accept="image/*"
-                                            onChange={handleFileChange}
-                                        />
-                                        </div>
-                                    )}
-                                    </div>
-                                </td>
-                                </tr>
-                                <tr>
+                               
+                                </tr> */}
+                                {/* <tr>
                                 <td>2025-05-28</td>
                                 <td>Redeemed for Gift Card</td>
                                 <td>-20</td>
@@ -338,7 +298,56 @@ export default function singleUser({ }) {
                                 <td>Unused Points</td>
                                 <td>-15</td>
                                 <td className="status status-expired">Expired</td>
+                                </tr> */}
+                               {[1, 2, 3].map((rowId) => (
+                                <tr key={rowId}>
+                                    <td>2025-06-10</td>
+                                    <td>Purchase at XYZ Store</td>
+                                    <td>+30</td>
+                                    <td className="status status-earned">Earned</td>
+                                    <td>
+                                        <div className="btnBox">
+                                            {!images[rowId] ? (
+                                            <div className="upload-container">
+                                                <label htmlFor={`file-upload-${rowId}`} className="custom-upload">
+                                                Upload screenshot
+                                                </label>
+                                                <input
+                                                id={`file-upload-${rowId}`}
+                                                type="file"
+                                                className="hidden-input"
+                                                accept="image/*"
+                                                onChange={(e) => handleImageChange(e, rowId)}
+                                                />
+                                            </div>
+                                            ) : (
+                                            <>
+                                                <button
+                                                className="showScreenShot"
+                                                aria-label="screen-shot"
+                                                title="screenshot"
+                                                >
+                                                <Image
+                                                    src={images[rowId]}
+                                                    width={50}
+                                                    height={50}
+                                                    alt="uploaded"
+                                                />
+                                                </button>
+                                                <button
+                                                className="deletebtn"
+                                                onClick={() => handleDelete(rowId)}
+                                                aria-label="delete-screenshot"
+                                                title="delete-screenshot"
+                                                >
+                                                <Image src="/images/trash.svg" width={20} height={20} alt="delete" />
+                                                </button>
+                                            </>
+                                            )}
+                                        </div>
+                                    </td>
                                 </tr>
+                                ))}
                             </tbody>
                         </table>
                     </div>
