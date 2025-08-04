@@ -82,3 +82,204 @@
         margin-bottom: 1rem;
       }
     }
+
+    /* modal */
+ .giftModal .modal-dialog{
+      max-width: 700px;
+    }
+    .giftModal .modal-dialog .modal-content{
+      border-radius: 20px;
+    }
+    .giftModal .closeBtn{
+      box-shadow: none;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      border-radius: 10px;
+      background-color: var(--primary-color);
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.2rem;
+      color: #fff;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+    }
+     .giftModal .modal-title{
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+      .giftModal .modal-header{
+      font-weight: 600;
+      font-size: 1.2rem;
+      padding: 2rem;
+      border-bottom: none;
+      padding-bottom: 0;
+      padding-left: 1rem;
+    }
+     .giftModal .listItem{
+     margin-bottom: 1.4rem;
+    }
+    .giftModal .listItem:nth-of-type(2) .method{
+     background-color: #000;
+    }
+    .giftModal .listItem .method{
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: 1.7rem;
+    padding: .5rem 1.2rem;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    letter-spacing: .5px;
+    font-size: .9rem;
+    }
+    ul.custom-list {
+  list-style: none;
+  padding-left: .5rem;
+}
+
+ul.custom-list li::before {
+  content: "✔️"; 
+  margin-right: 1rem;
+  display: inline-block;
+  width: 1em;
+}
+ul.custom-list li {
+ color: #222;
+ font-weight: 500;
+ font-size: .9rem;
+ margin-bottom: .8rem;
+ display: flex;
+}
+.modal-body .saerchBx div{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.reedeemModal .modal-body{
+  min-height:300px;
+}
+.modal-body .saerchBx input{
+  width: 100%;
+  display: block;
+}
+.reedeemModal .react-search-box-dropdown{
+  margin: .5rem;
+  max-width: 95%;
+  margin: auto;
+  left: 20px;
+  top: 60px;
+}
+.reedeemModal .react-search-box-dropdown ul{
+  width: 100%;
+}
+.showScreenShot{
+  border: none;
+  outline: none;
+}
+.rewardHistoryPage .btnBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.rewardHistoryPage .btnBox .deletebtn{
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.btnBox .uploadss{
+  border: none;
+outline: none;
+background-color: var(--primary-color);
+color: #fff;
+border-radius: 4px;
+padding: .5rem;
+font-size: .8rem;
+}
+
+.upload-container {
+  text-align: center;
+}
+
+.custom-upload {
+  background-color: #4B0082;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.custom-upload:hover {
+  background-color: #370062;
+}
+
+.hidden-input {
+  display: none;
+}
+.redeeminput label{
+ font-weight: 500;
+ margin-bottom: .5rem;
+ font-size: .9rem;
+}
+.redeeminput .form-control{
+  box-shadow: none;
+  border-radius: 4px;
+  font-size: .8rem;
+  font-weight: 500;
+}
+.redeeminput .txt{
+
+  font-size: .8rem;
+  font-weight: 500;
+  color: #000;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.redeeminput .txt a{
+
+ color: #1a0dab;
+}
+.redeeminput .txt a:hover{
+
+ text-decoration: underline;
+}
+.redeeminput button{
+ border: none;
+ outline: none;
+ background-color: var(--primary-color);
+ color: #fff;
+ padding:  .5rem 1rem;
+ border-radius: 4px;
+}
+.redeeminput .errmsg{
+font-size: .7rem;
+font-weight: 500;
+color: #ff0000;
+}
+.redeeminput .errmsg svg{
+width: 16px;
+fill: #ff0000;
+}
+.reedeemRules{
+  max-width: 400px;
+  margin: auto;
+  text-align: left;
+}
+.reedeemRules ul{
+padding-left: 20px;
+list-style-type: disc;
+}
+.reedeemRules ul li{
+padding-left: 10px;
+font-weight: 500;
+margin-bottom: .5rem;
+font-size: .9rem;
+}
+.rewards-section.redemrulesbox{
+  padding: 0;
+}

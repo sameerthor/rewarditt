@@ -41,7 +41,7 @@ export default function rewardPage({ }) {
                     </div>
                 </div>
             </section>
-            {/* <section className='usersection'>
+            <section className='usersection'>
                 <div className="container">
                     <div className='userBox'>
                             <div className='userName'>Hi, MS DHONI</div>
@@ -57,7 +57,7 @@ export default function rewardPage({ }) {
                             </div>
                     </div>
                 </div>
-            </section> */}
+            </section>
             <section className="rewards-section">
                 <div className="container" style={{borderBottom: "1px solid #ccc"}}>
                      <h2>Ways to Earn Points</h2>
