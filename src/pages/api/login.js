@@ -33,7 +33,7 @@ res.setHeader('Set-Cookie', serialize('auth_token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'Lax',
-      maxAge: 60 * 60 * 24, // 1 day
+      maxAge: 60 * 60 * 2, // 2 hour
       path: '/',
     }));
 
