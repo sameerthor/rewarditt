@@ -8,7 +8,14 @@ import ReactSearchBox from 'react-search-box';
 import { useRouter } from 'next/router';
 
 export default function Header() {
+  const [token, setToken] = useState(null);
 
+  useEffect(() => {
+    fetch('/api/get-token', { credentials: 'include' })
+      .then(res => res.json())
+      .then(data => setToken(data.token));
+  }, []);
+  
   const router = useRouter();
   const [filterdata, setFilterdata] = useState([]);
   const [showSearch, setShowSearch] = useState(false);
@@ -151,7 +158,7 @@ export default function Header() {
                     </button>
                   </div>
                   <div className="loginBtn">
-                    <a href="/login" aria-label="login / sign up" title="login / signup">
+                    <a href={token?'/dashboard':'/login'}  aria-label="login / sign up" title="login / signup">
                       <svg className="svg-inline--fa fa-user g-icon g-icon-md" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path d="M320 128a96 96 0 1 0 -192 0 96 96 0 1 0 192 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM32 480l384 0c-1.2-79.7-66.2-144-146.3-144l-91.4 0c-80 0-145 64.3-146.3 144zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"></path>
                       </svg>
@@ -240,7 +247,7 @@ export default function Header() {
                   </button>
                 </div>
                 <div className="loginBtn">
-                  <a href="/login" aria-label="login / sign up" title="login / signup">
+                  <a href={token?'/dashboard':'/login'} aria-label="login / sign up" title="login / signup">
                     <svg class="svg-inline--fa fa-user g-icon g-icon-md" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                       <path d="M320 128a96 96 0 1 0 -192 0 96 96 0 1 0 192 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM32 480l384 0c-1.2-79.7-66.2-144-146.3-144l-91.4 0c-80 0-145 64.3-146.3 144zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"></path>
                     </svg>
