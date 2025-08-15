@@ -23,6 +23,7 @@
     "canvas": "^3.1.0",
     "cookie": "^1.0.2",
     "date-fns": "^4.1.0",
+    "form-data": "^4.0.4",
     "formidable": "^3.5.4",
     "fs": "^0.0.1-security",
     "fs-extra": "^11.2.0",

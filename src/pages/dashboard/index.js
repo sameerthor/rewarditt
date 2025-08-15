@@ -31,6 +31,8 @@ export default function singleUser({ userData }) {
 
     const [points, setPoints] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [modalScreenshot, setModalScreenshot] = useState('');
+
 
     useEffect(() => {
         const fetchRedeemData = async () => {
@@ -267,6 +269,7 @@ export default function singleUser({ userData }) {
                                                                 data-bs-target="#showScreenShot"
                                                                 aria-label="screen-shot"
                                                                 title="screenshot"
+                                                                onClick={() => setModalScreenshot(p.proof_image)}
                                                             >
                                                                 <Image
                                                                     width={50}
@@ -275,7 +278,7 @@ export default function singleUser({ userData }) {
                                                                     alt="Screenshot"
                                                                 />
                                                             </button>
-                                                            <button
+                                                            {/* <button
                                                                 className="deletebtn"
                                                                 onClick={() => handleDelete(p.id)}
                                                                 aria-label="delete-screenshot"
@@ -287,7 +290,7 @@ export default function singleUser({ userData }) {
                                                                     src="/images/trash.svg"
                                                                     alt="Delete"
                                                                 />
-                                                            </button>
+                                                            </button> */}
                                                         </>
                                                     ) : (
                                                         <div className="upload-container">
@@ -470,10 +473,11 @@ export default function singleUser({ userData }) {
                             >x</button>
                         </div>
                         <div className="modal-body">
-                            <div className="saerchBx">
-
-
-                            </div>
+                            <img src={`${modalScreenshot}`} style={{
+                                width: '100%',       // full width of parent
+                                height: '100%',      // full height of parent
+                                objectFit: 'contain' // maintain aspect ratio
+                            }} />
                         </div>
                     </div>
                 </div>
