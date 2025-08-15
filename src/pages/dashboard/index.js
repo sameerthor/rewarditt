@@ -23,6 +23,7 @@ const TYPE_LABELS = {
     expired: 'Expired',
 };
 
+const MIN_REDEEM = parseInt(process.env.NEXT_PUBLIC_MIN_REDEEM_POINTS || "1000");
 
 export default function singleUser({ userData }) {
 
@@ -32,6 +33,8 @@ export default function singleUser({ userData }) {
     const [points, setPoints] = useState([]);
     const [loading, setLoading] = useState(true);
     const [modalScreenshot, setModalScreenshot] = useState('');
+    const [redeemPoints, setRedeemPoints] = useState("");
+    const [error, setError] = useState("");
 
 
     useEffect(() => {
@@ -74,8 +77,6 @@ export default function singleUser({ userData }) {
     };
 
 
-    const [uploadedImage, setUploadedImage] = useState(null);
-
     // Step 2: Add event handlers
     const handleFileChange = async (e, pointId) => {
         const file = e.target.files[0];
@@ -109,10 +110,45 @@ export default function singleUser({ userData }) {
     };
 
 
-    const handleDelete = () => {
-        setUploadedImage(null);
+
+    const handleChange = (e) => {
+        const val = parseInt(e.target.value) || 0;
+        var availablePoints = points
+            ?.filter(p => p.status === 'approved')
+            .reduce((sum, p) => sum + parseFloat(p.points), 0)
+
+        setRedeemPoints(val);
+        if (val < MIN_REDEEM) {
+            setError(`You must have at least ${MIN_REDEEM} points to redeem.`);
+        } else if (val > availablePoints) {
+            setError(`You cannot redeem more than your available points (${availablePoints}).`);
+        } else {
+            setError("");
+        }
     };
 
+    const handleRedeem = async () => {
+        if (error || !redeemPoints) return;
+
+        try {
+            const res = await fetch("/api/redeem-points/create", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ points: redeemPoints })
+            });
+
+            const data = await res.json();
+            if (res.status === 200) {
+                alert("Redeem request submitted successfully!");
+                setRedeemPoints("");
+            } else {
+                alert(data.error || "Failed to submit redeem request.");
+            }
+        } catch (err) {
+            console.error(err);
+            alert("Error submitting redeem request.");
+        }
+    };
 
     return (
         <>
@@ -493,29 +529,35 @@ export default function singleUser({ userData }) {
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">Redeem your points</h5>
-                            <button
-                                type="button"
-                                className="closeBtn ms-auto"
-                                data-bs-dismiss="modal"
-                                aria-label="Close"
-                            >x</button>
+                            <h5 className="modal-title">Redeem your points</h5>
+                            <button type="button" className="closeBtn ms-auto" data-bs-dismiss="modal">x</button>
                         </div>
                         <div className="modal-body">
                             <div className="redeeminput">
-                                <label htmlFor=""> Enter how many points you want to redeem (minimum 1000 points)</label>
-                                <input type="number" className='form-control' placeholder='eg 1000' />
-                                <span className='errmsg'>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path d="M320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM320 200C333.3 200 344 210.7 344 224L344 336C344 349.3 333.3 360 320 360C306.7 360 296 349.3 296 336L296 224C296 210.7 306.7 200 320 200zM293.3 416C292.7 406.1 297.6 396.7 306.1 391.5C314.6 386.4 325.3 386.4 333.8 391.5C342.3 396.7 347.2 406.1 346.6 416C347.2 425.9 342.3 435.3 333.8 440.5C325.3 445.6 314.6 445.6 306.1 440.5C297.6 435.3 292.7 425.9 293.3 416z" /></svg>
-                                    you must have at least 1000 points to complete your reedeem.
-                                </span>
-                                <p className='txt'>Your amount will be transfered to your payPal account jouhn@payPal <a href="/profile">change payPal account</a></p>
+                                <label>
+                                    Enter how many points you want to redeem (minimum {MIN_REDEEM} points)
+                                </label>
+                                <input
+                                    type="number"
+                                    className="form-control"
+                                    placeholder={`eg ${MIN_REDEEM}`}
+                                    value={redeemPoints}
+                                    onChange={handleChange}
+                                />
+                                {error && <span className="errmsg">{error}</span>}
+                                <p className="txt">
+                                    Your amount will be transferred to your PayPal account {userData.paypal_email}{" "}
+                                    <a href="/profile">change PayPal account</a>
+                                </p>
                                 <div className="text-center">
-                                    <button>Redeem Now</button>
+                                    <button onClick={handleRedeem} disabled={!!error || !redeemPoints}>
+                                        Redeem Now
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </>
