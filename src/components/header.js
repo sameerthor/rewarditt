@@ -294,7 +294,7 @@ export default function Header() {
                                     <path d="M3 13h2V7H3v6zm4 0h2V3H7v10zm4 0h2V9h-2v4z"></path>
                                 </svg>
                               </span>
-                            <a href="href={token?'/dashboard':'/login'}" aria-label="login / sign up" title="login / signup">Dashboard</a>
+                            <a href={token?'/dashboard':'/login'} aria-label="login / sign up" title="login / signup">Dashboard</a>
                           </li>
                           <li onClick={handleMenuClick} className="dropItem">
                             <span>

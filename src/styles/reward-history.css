@@ -290,3 +290,267 @@ font-size: .9rem;
   text-align: left;
   margin-bottom: 1rem;
 }
+
+      .rules-container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+        max-width: 900px;
+        width: 100%;
+        padding: 25px;
+        margin: 1rem auto;
+    }
+
+    .rules-title {
+        color: #006166;
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+        border-bottom: 3px solid var(--primary-color);
+        padding-bottom: 10px;
+    }
+
+    .rules-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .rules-list li {
+        display: flex;
+        align-items: center;
+        background: #ede7f6;
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .rules-list li:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .rule-icon {
+        background: var(--primary-color);
+        color: white;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 12px;
+        font-size: 18px;
+        flex-shrink: 0;
+    }
+
+    .rule-text {
+        font-size: 15px;
+        color: #333;
+    }
+    /* refer and earn */
+    :root {
+          --primary: #4b0082;
+          --accent: #4b0082;
+          --accent-2: #6a0dad;
+          --bg: #0f1221;
+          --card: #171a2e;
+          --muted: #8c93ad;
+          --text: #f5f7ff;
+          --radius: 18px;
+          --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+        .referAndErn.wrap {
+          max-width: 1100px;
+          margin: 40px auto;
+          padding: 0 16px;
+        }
+       .referAndErn .hero {
+          background: linear-gradient(135deg, #1c2140 0%, #161a31 70%);
+          border: 1px solid rgba(255, 255, 255, 0.06);
+          border-radius: calc(var(--radius) + 4px);
+          padding: 28px;
+          box-shadow: var(--shadow);
+          position: relative;
+          overflow: hidden;
+        }
+      .referAndErn .hero h2 {
+          margin: 0 0 8px;
+          font-size: clamp(24px, 3.2vw, 36px);
+          color: #fff;
+        }
+      .referAndErn .hero p {
+          margin: 0;
+          color: var(--muted);
+          max-width: 60ch;
+        }
+        .referAndErn .ref-box {
+          display: grid;
+          gap: 12px;
+          margin-top: 22px;
+          grid-template-columns: 1fr auto;
+          background: var(--card);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: var(--radius);
+          padding: 12px;
+        }
+        .referAndErn .ref-input {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          padding: 10px 12px;
+          background: rgba(255, 255, 255, 0.04);
+          border: 1px dashed rgba(255, 255, 255, 0.12);
+          border-radius: 12px;
+          min-width: 0;
+        }
+        .referAndErn .ref-input code {
+          white-space: nowrap;
+          overflow: auto;
+          font-size: 14px;
+        }
+        .referAndErn .btn {
+          border: 0;
+          border-radius: 12px;
+          padding: 10px 14px;
+          background: linear-gradient(135deg, var(--accent), #7a1fa2);
+          color: #fff;
+          font-weight:  600;
+          cursor: pointer;
+        }
+        .referAndErn .btn.secondary {
+          background: linear-gradient(135deg, var(--accent-2), #4b0082);
+          color: #fff;
+        }
+        .referAndErn .copied {
+          font-size: 13px;
+          color: var(--accent);
+          padding: 4px 8px;
+          border-radius: 999px;
+          background: rgba(75, 0, 130, 0.1);
+        }
+        .referAndErn .share-row {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          grid-column: 1 / -1;
+        }
+       .referAndErn .share-chip {
+          padding: 8px 12px;
+          border-radius: 999px;
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          background: rgba(255, 255, 255, 0.04);
+          font-size: 14px;
+          cursor: pointer;
+        }
+        .referAndErn .grid {
+          margin-top: 26px;
+          display: grid;
+          gap: 18px;
+        }
+        @media (min-width: 820px) {
+         .referAndErn .grid {
+            grid-template-columns: 1fr;
+          }
+        }
+       .referAndErn .card {
+          background: var(--card);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: var(--radius);
+          padding: 18px;
+          box-shadow: var(--shadow);
+        }
+       .referAndErn .card h3 {
+          margin: 0 0 10px;
+          font-size: 18px;
+          color: var(--accent);
+        }
+       .referAndErn .muted {
+          color: var(--muted);
+        }
+       .referAndErn .steps {
+          display: grid;
+          gap: 12px;
+          grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+        .referAndErn .step {
+          padding: 12px;
+          border-radius: 14px;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(255, 255, 255, 0.03);
+        }
+        .referAndErn .badge {
+          display: inline-block;
+          font-weight: 600;
+          font-size: 12px;
+          padding: 4px 8px;
+          border-radius: 999px;
+          background: rgba(75, 0, 130, 0.15);
+          border: 1px solid rgba(75, 0, 130, 0.35);
+          margin-bottom: 6px;
+        }
+       .referAndErn .tiers {
+          display: grid;
+          gap: 12px;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+       .referAndErn .tier {
+          padding: 14px;
+          border-radius: 14px;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+       .referAndErn .bar {
+          height: 8px;
+          border-radius: 99px;
+          background: rgba(255, 255, 255, 0.08);
+          margin-top: 8px;
+          overflow: hidden;
+        }
+        .referAndErn .bar > span {
+          display: block;
+          height: 100%;
+          background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        }
+        .referAndErn .stats {
+          display: grid;
+          gap: 12px;
+          grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        }
+       .referAndErn .stat {
+          padding: 14px;
+          border-radius: 14px;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          text-align: center;
+        }
+       .referAndErn .stat b {
+          display: block;
+          font-size: 28px;
+        }
+        .referAndErn .terms {
+          margin-top: 18px;
+          font-size: 13px;
+          color: var(--muted);
+        }
+       .referAndErn .link {
+          color: var(--accent-2);
+          text-decoration: none;
+          border-bottom: 1px dashed rgba(75, 0, 130, 0.5);
+        }
+       .referAndErn .row {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+       .referAndErn .spacer {
+          flex: 1;
+        }
+      @media(max-width: 600px){
+        .referAndErn.wrap{
+          padding: 0;
+        }
+      }

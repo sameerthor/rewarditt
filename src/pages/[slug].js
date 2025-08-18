@@ -55,7 +55,7 @@ export default function Store({ store, relStores, faqs }) {
                 <small className='hashTag'>#getReward</small>
                 <h1> Join {store.title} Reward Program</h1>
                 {token ? <>
-                  <a href="#"
+                  <a href={token?'/dashboard':'/login'}
                     onClick={async (e) => {
                       await updateRedeempoints(store.title)
                       // localStorage.setItem('store_title', store.title)
@@ -67,7 +67,7 @@ export default function Store({ store, relStores, faqs }) {
                       //   window.open(store.affiliate_url, "_self");
                       // }, 200);
                     }}
-                    className='joinNow'>Shop Today!</a></> : <>
+                    className='joinNow'>Join &amp; and points now!</a></> : <>
                   <a href="/register" className='joinNow'>Join Today!</a>
                   <p>Already have an account? <a href="/login">Login Now</a></p></>}
 
@@ -134,41 +134,48 @@ export default function Store({ store, relStores, faqs }) {
         </div>
       </section>
       <section className="rewards-section">
-        <div className="container" style={{ borderBottom: "1px solid #ccc" }}>
-          <h2>Ways to Earn Points</h2>
-          <div className="row row-cols-lg-4 row-cols-md-2 row-cols-1">
-            <div className="col">
-              <div className="reward-box">
-                <div className="reward-icon">👤</div>
-                <div className="reward-title">50 Points</div>
-                <div className="reward-desc">Create An Account</div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="reward-box">
-                <div className="reward-icon">🛒</div>
-                <div className="reward-title">1 Point</div>
-                <div className="reward-desc">For Every $ Spent</div>
-              </div>
-            </div>
-            <div className="col">
-              <div className="reward-box">
-                <div className="reward-icon">💬</div>
-                <div className="reward-title">30+ Points</div>
-                <div className="reward-desc">Leave a Review</div>
-              </div>
-            </div>
+          <div className="container" style={{borderBottom: "1px solid #ccc"}}>
+                  <h2>Ways to Earn Points</h2>
+              <div className="row row-cols-lg-5 row-cols-md-2 row-cols-1">
+                  <div className="col">
+                      <div className="reward-box">
+                          <div className="reward-icon">👤</div>
+                          <div className="reward-title">30 Points</div>
+                          <div className="reward-desc">Create An Account</div>
+                      </div>
+                  </div>
+                  <div className="col">
+                      <div className="reward-box">
+                          <div className="reward-icon">🛒</div>
+                          <div className="reward-title">30 Points</div>
+                          <div className="reward-desc">For Every verified purchase</div>
+                      </div>
+                  </div>
+          
+                  <div className="col">
+                      <div className="reward-box">
+                          <div className="reward-icon">🎂</div>
+                          <div className="reward-title">100 Points</div>
+                          <div className="reward-desc">Happy Birthday</div>
+                      </div>
+                  </div>
+                  <div className="col">
+                      <div className="reward-box">
+                          <div className="reward-icon">👬</div>
+                          <div className="reward-title">50 Points</div>
+                          <div className="reward-desc">Refer a friend </div>
+                      </div>
+                  </div>
+                  <div className="col">
+                      <div className="reward-box">
+                          <div className="reward-icon">🏷️</div>
+                          <div className="reward-title">30 Points</div>
+                          <div className="reward-desc">If our coupon code does not work (You must use our referral link to claim points)</div>
+                      </div>
+                  </div>
 
-
-            <div className="col">
-              <div className="reward-box">
-                <div className="reward-icon">🎂</div>
-                <div className="reward-title">100 Points</div>
-                <div className="reward-desc">Happy Birthday</div>
               </div>
-            </div>
           </div>
-        </div>
       </section>
       <section className="rewards-section">
         <div className="container">

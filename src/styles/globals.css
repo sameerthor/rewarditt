@@ -748,6 +748,7 @@ font-weight: 600;
     width: 140px;
     border-radius: 5px;
     padding-bottom: 0;
+    background-color: #fff;
     
  }
  .headerDropdown .userImg {
@@ -756,6 +757,9 @@ font-weight: 600;
     border: 1px solid #ccc;
     border-radius: 50%;
     object-fit: cover;
+}
+ .headerDropdown .userImg:hover{
+   cursor: pointer;
 }
 .headerDropdown .userName{
   font-weight: 500;
