@@ -4,6 +4,7 @@ import MetaTags from '@/components/MetaTags';
 import "@/styles/user-info.css";
 import { useState } from "react";
 import { parse } from 'cookie';
+import {useEffect } from "react";
 
 export default function UserInfo({ user_info }) {
     const [formData, setFormData] = useState({
@@ -59,6 +60,24 @@ export default function UserInfo({ user_info }) {
             setLoading(false);
         }
     };
+    //birth date
+    const [dob, setDob] = useState("");
+  const [maxDate, setMaxDate] = useState("");
+
+  useEffect(() => {
+    // Set today's date as the maximum allowed date
+    const today = new Date().toISOString().split("T")[0];
+    setMaxDate(today);
+  }, []);
+
+  const handleDobSubmit = (e) => {
+    e.preventDefault();
+    if (!dob) {
+      alert("Please enter your date of birth.");
+      return;
+    }
+    alert(`Your date of birth is: ${dob}`);
+  };
 
     return (
         <>
@@ -104,6 +123,20 @@ export default function UserInfo({ user_info }) {
                                             <input type="text" className="form-control text-uppercase" id="swift_code" name="swift_code" placeholder=" " value={formData.swift_code} onChange={handleChange} />
                                             <label htmlFor="swift_code">SWIFT Code</label>
                                         </div>
+                                        <div className="form-floating-custom col">
+                                            <input
+                                               className='form-control text-uppercase'
+                                                type="date"
+                                                id="dob"
+                                                value={dob}
+                                                onChange={(e) => setDob(e.target.value)}
+                                                max={maxDate}
+                                                required
+                                            />
+                                            <label htmlFor="dob">Enter your Date of Birth:</label>
+                                        </div>
+
+                                        
                                         <div className="d-grid text-center col-lg-12">
                                             <button type="submit" className="btn btn-primary btn-lg rounded-3" disabled={loading}> {loading ? 'Saving...' : 'Save'} </button>
                                         </div>
