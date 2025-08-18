@@ -97,6 +97,24 @@ export default function Header() {
     }
     setShowSearch(prev => !prev);
   };
+  const [open, setOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Close dropdown when clicking a menu item
+  const handleMenuClick = () => {
+    setOpen(false);
+  };
 
   return (
     <nav className="navbar navbar-expand-lg">
@@ -232,7 +250,7 @@ export default function Header() {
                         <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                       </svg>}
                     />
-                    <button class="btn btn-outline-success" type="button">Search</button>
+                    <button className="btn btn-outline-success" type="button">Search</button>
 
                   </div>
                 )}
@@ -246,12 +264,57 @@ export default function Header() {
                     </svg>
                   </button>
                 </div>
-                <div className="loginBtn">
+                {/* <div className="loginBtn">
                   <a href={token?'/dashboard':'/login'} aria-label="login / sign up" title="login / signup">
-                    <svg class="svg-inline--fa fa-user g-icon g-icon-md" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <svg className="svg-inline--fa fa-user g-icon g-icon-md" aria-hidden="true" focusable="false" data-prefix="fal" data-icon="user" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                       <path d="M320 128a96 96 0 1 0 -192 0 96 96 0 1 0 192 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM32 480l384 0c-1.2-79.7-66.2-144-146.3-144l-91.4 0c-80 0-145 64.3-146.3 144zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3z"></path>
                     </svg>
                   </a>
+                  
+                </div> */}
+                <div ref={dropdownRef} className="relative inline-block text-left headerDropdown" >
+                  {/* Profile Icon */}
+                  <div className="cursor-pointer flex items-center space-x-2" onClick={() => setOpen(!open)}>
+                    <Image
+                      className="userImg"
+                      width={30}
+                      height={30}
+                      src="/images/avtar.webp"
+                  />
+                  </div>
+
+                  {/* Dropdown */}
+                  {open && (
+                    <div className="dpdown">
+                      <div className="userName">MS Dhoni</div>
+                        <ul>
+                          <li onClick={handleMenuClick} className="dropItem">
+                            <span>
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M3 13h2V7H3v6zm4 0h2V3H7v10zm4 0h2V9h-2v4z"></path>
+                                </svg>
+                              </span>
+                            <a href="href={token?'/dashboard':'/login'}" aria-label="login / sign up" title="login / signup">Dashboard</a>
+                          </li>
+                          <li onClick={handleMenuClick} className="dropItem">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 448 512">
+                                <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z"></path></svg>
+                            </span>
+                            <a href="/profile">Profile</a>
+                          </li>
+                          <li onClick={handleMenuClick} className="dropItem">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                                    <path d="M6 2a1 1 0 0 0-1 1v3h1V3h7v10H6v-3H5v3a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H6z"></path>
+                                    <path d="M.146 8.354a.5.5 0 0 0 0-.708L3.793 4H2.5a.5.5 0 0 0 0 1h1.793L.146 7.646a.5.5 0 1 0 .708.708L4.293 9H2.5a.5.5 0 0 0 0 1h1.793L.146 8.354z"></path>
+                                </svg>
+                              </span>
+                            <a href="/logout">Logout</a>
+                          </li>
+                        </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             </>
