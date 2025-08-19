@@ -16,8 +16,21 @@
     font-size: .9rem;
     font-weight: 500;
     }
+    .implinks .infoItem a{
+     border: none;
+     outline: none;
+     background-color: transparent;
+    color: #1a0dab;
+    font-size: .9rem;
+    font-weight: 500;
+    cursor: pointer;
+    }
   .implinks button:hover{
    text-decoration: underline;
+    }
+    .implinks .infoItem a:hover{
+   text-decoration: underline;
+   color: #1a0dab;
     }
 .rewardStr .rewdheading{
    font-weight: 600;
@@ -577,6 +590,7 @@ ul.custom-list li {
           font-size: 0.95rem;
           margin-top: 5px;
         }
+        
         @media(max-width:560px){
             .rewards-section h2 {
                 font-size: 1.4rem;

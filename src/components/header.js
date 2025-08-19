@@ -190,7 +190,7 @@ export default function Header({ loggedIn }) {
                     {/* Dropdown */}
                     {open && (
                       <div className="dpdown">
-                        <div className="userName">MS Dhoni</div>
+                      
                           <ul>
                             <li onClick={handleMenuClick} className="dropItem">
                               <span>
@@ -337,7 +337,7 @@ export default function Header({ loggedIn }) {
                   {/* Dropdown */}
                   {open && (
                     <div className="dpdown">
-                      <div className="userName">MS Dhoni</div>
+                     
                         <ul>
                           <li onClick={handleMenuClick} className="dropItem">
                             <span>

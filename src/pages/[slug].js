@@ -54,27 +54,40 @@ export default function Store({ store, relStores, faqs }) {
               <div className='txtBox'>
                 <small className='hashTag'>#getReward</small>
                 <h1> Join {store.title} Reward Program</h1>
-                {token ? <>
-                  <a href={token?'/dashboard':'/login'}
-                    onClick={async (e) => {
-                      await updateRedeempoints(store.title)
-                      // localStorage.setItem('store_title', store.title)
+                {token ? (
+                    <a
+                      href={store.affiliate_url}
+                      onClick={async (e) => {
+                        e.preventDefault();
+                        await updateRedeempoints(store.title);
+                        window.location.href = store.affiliate_url;
+                      }}
+                      target='_blank'
+                      className="joinNow"
+                    >
+                      Join &amp; earn points now!
+                    </a>
+                  ) : (
+                    <a
+                      href="/login"
+                      className="joinNow"
+                    >
+                      Join &amp; earn points now!
+                    </a>
+                  )}
 
-                      // const url = `/dashboard`
-
-                      // window.open(url, "_blank");
-                      // setTimeout(() => {
-                      //   window.open(store.affiliate_url, "_self");
-                      // }, 200);
-                    }}
-                    className='joinNow'>Join &amp; and points now!</a></> : <>
-                  <a href="/register" className='joinNow'>Join Today!</a>
-                  <p>Already have an account? <a href="/login">Login Now</a></p></>}
+                  {/* <a href="/register" className='joinNow'>Join Today!</a>
+                  <p>Already have an account? <a href="/login">Login Now</a></p> */}
 
               </div>
               <div className='implinks'>
                 <div className="infoItem"><button data-bs-toggle='modal' data-bs-target='#redeemModal'>Read how to redeem ?</button></div>
                 <div className="infoItem"><button data-bs-toggle='modal' data-bs-target='#impPoints'>Important Points</button></div>
+                {token && (
+                  <div className="infoItem">
+                    <a href="/dashboard#rewardsHistory">Upload Purchase Screenshot</a>
+                  </div>
+                )}
               </div>
             </div>
             <div className="col-md-6 noPadding">
@@ -311,7 +324,28 @@ export default function Store({ store, relStores, faqs }) {
               <div className='txtBox'>
                 <div className='headingone'>Redeem for Discounts</div>
                 <p className='mb-3'>Every 100 points = $10 Discount. Redeem your points at checkout. Points expire 12 months after the date earned and cannot be combined with any other promotions or coupons. </p>
-                <a href="/login" className='joinNow'>Join Today!</a>
+              
+                 {token ? (
+                    <a
+                      href={store.affiliate_url}
+                      onClick={async (e) => {
+                        e.preventDefault();
+                        await updateRedeempoints(store.title);
+                        window.location.href = store.affiliate_url
+                      }}
+                      target='_blank'
+                      className="joinNow"
+                    >
+                      Join &amp; earn points now!
+                    </a>
+                  ) : (
+                    <a
+                      href="/login"
+                      className="joinNow"
+                    >
+                      Join &amp; earn points now!
+                    </a>
+                  )}
               </div>
             </div>
           </div>

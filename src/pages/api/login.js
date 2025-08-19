@@ -43,3 +43,4 @@ res.setHeader('Set-Cookie', serialize('auth_token', token, {
     return res.status(500).json({ error: 'Server error' });
   }
 }
+

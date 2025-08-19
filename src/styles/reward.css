@@ -98,7 +98,11 @@
         .reward-desc {
           color: #6c757d;
           font-size: 0.95rem;
-          margin-top: 5px;
+          margin-top: 5px
+        }
+        .reward-desc small{
+          font-size: .65rem;
+          display: inline-block;
         }
         @media(max-width:560px){
             .rewards-section h2 {

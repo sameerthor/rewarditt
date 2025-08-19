@@ -162,7 +162,57 @@ export default function singleUser({ data }) {
       alert("Sharing not supported on this browser. Copy the link instead.");
     }
   };
+//upload ss if coupon code not work
+  const [transactions, setTransactions] = useState([
+    { id: 1, date: "", description: "", storeUrl: "" },
+  ]);
 
+  const [screenshots, setScreenshots] = useState({});
+
+  const uploadScreenshot = (e, id) => {
+    const file = e.target.files[0];
+    if (file) {
+      const fileURL = URL.createObjectURL(file);
+      setScreenshots((prev) => ({
+        ...prev,
+        [id]: fileURL,
+      }));
+    }
+  };
+
+  const removeScreenshot = (id) => {
+    setScreenshots((prev) => {
+      const updated = { ...prev };
+      delete updated[id];
+      return updated;
+    });
+  };
+
+  const updateTransaction = (id, field, value) => {
+    setTransactions((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, [field]: value } : item
+      )
+    );
+  };
+
+  const addTransaction = () => {
+    setTransactions((prev) => [
+      ...prev,
+      { id: Date.now(), date: "", description: "", storeUrl: "" },
+    ]);
+  };
+
+  const deleteTransaction = (id) => {
+    setTransactions((prev) => prev.filter((item) => item.id !== id));
+
+    // also remove screenshot if uploaded
+    setScreenshots((prev) => {
+      const updated = { ...prev };
+      delete updated[id];
+      return updated;
+    });
+  };
 
     return (
         <>
@@ -224,7 +274,7 @@ export default function singleUser({ data }) {
             <section className='usersection'>
                 <div className="container">
                     <div className='userBox'>
-                            <div className='userName'>Hi, MS DHONI</div>
+                            <div className='userName'>Hi, {username}</div>
                             <div className='points'>You have <span>50</span> points</div>
 
                             <div class="expiry-warning">
@@ -233,7 +283,7 @@ export default function singleUser({ data }) {
 
                             <div class="btn-container">
                                 <button data-bs-toggle="modal" data-bs-target="#reedeemModal" className="btn">Shop Now</button>
-                                <button data-bs-toggle="modal" data-bs-target="#redeemPoints" className="btn">Redeem Now</button>
+                                <button data-bs-toggle="modal" data-bs-target="#redeemPoints" className="btn">Redeem Cash</button>
                                  <button
                                     className="btn"
                                     onClick={() => document.getElementById('rewardsHistory')?.scrollIntoView({ behavior: 'smooth' })}
@@ -249,32 +299,50 @@ export default function singleUser({ data }) {
                     <div className='redeemRulesContainer'>
                          <div class="rules-container">
                             <h2 class="rules-title text-center">Rules to  reedeem your reward points</h2>
-                            <ul class="rules-list">
-                                <li>
-                                    <div class="rule-icon">💰</div>
-                                    <div class="rule-text">For every 1000 points you can redeem $20</div>
-                                </li>
-                                <li>
-                                    <div class="rule-icon">💰</div>
-                                    <div class="rule-text">For every 2000 points you can redeem $40</div>
-                                </li>
-                                <li>
-                                    <div class="rule-icon">💰</div>
-                                    <div class="rule-text">For every 3000 points you can redeem $60</div>
-                                </li>
-                                <li>
-                                    <div class="rule-icon">💰</div>
-                                    <div class="rule-text">For every 5000 points you can redeem $200</div>
-                                </li>
-                                <li>
-                                    <div class="rule-icon">💰</div>
-                                    <div class="rule-text">You must use our referral link to claim points</div>
-                                </li>
-                                <li>
-                                    <div class="rule-icon">💵</div>
-                                    <div class="rule-text">You must have 1000 points to redeem cash</div>
-                                </li>
-                            </ul>
+                            <div class="rules-list row row-cols-lg-4  row-cols-md-3  row-cols-sm-2 row-cols-1">
+                                <div className='col'>
+                                    <div className='li'>
+                                        <div class="rule-icon">💵</div>
+                                        <div class="rule-text">For every 1000 points you can redeem $20</div>
+                                    </div>
+                                </div>
+                                 <div className='col'>
+                                    <div className='li'>
+                                        <div class="rule-icon">💵</div>
+                                        <div class="rule-text">For every 2000 points you can redeem $40</div>
+                                    </div>
+                                </div>
+                                <div className='col'>
+                                    <div className='li'>
+                                        <div class="rule-icon">💵</div>
+                                        <div class="rule-text">For every 3000 points you can redeem $60</div>
+                                    </div>
+                                </div>
+                                <div className='col'>
+                                    <div className='li'>
+                                        <div class="rule-icon">💵</div>
+                                        <div class="rule-text">For every 5000 points you can redeem $200</div>
+                                    </div>
+                                </div>
+                                <div className='col'>
+                                    <div className='li'>
+                                        <div class="rule-icon">💵</div>
+                                        <div class="rule-text">You must use our referral link to claim points</div>
+                                    </div>
+                               </div>
+                                <div className='col'>
+                                   <div className='li'>
+                                        <div class="rule-icon">💵</div>
+                                        <div class="rule-text">You must have 1000 points to redeem cash</div>
+                                    </div>
+                                </div>
+                                <div className='col'>
+                                   <div className='li'>
+                                        <div class="rule-icon">💵</div>
+                                        <div class="rule-text">100 Points will be credited  if coupon code  does not work. </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -316,7 +384,7 @@ export default function singleUser({ data }) {
                             <div className="reward-box">
                                 <div className="reward-icon">🏷️</div>
                                 <div className="reward-title">30 Points</div>
-                                <div className="reward-desc">If our coupon code does not work (You must use our referral link to claim points)</div>
+                                <div className="reward-desc">If our coupon code does not work <small>* You must purchase the product and use our referral link to claim points</small></div>
                             </div>
                         </div>
 
@@ -394,7 +462,7 @@ export default function singleUser({ data }) {
             </section>
             <section className='rewardHistoryPage' id='rewardsHistory'>
                 <div className="container">
-                    <h1>Reward History</h1>
+                    <h2>Reward History</h2>
 
                     <div className="table-container">
                         <table>
@@ -497,6 +565,122 @@ export default function singleUser({ data }) {
                                 ))}
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </section>
+             <section className='rewardHistoryPage'>
+                <div className="container">
+                    <h2>Upload  Screenshot if coupon code does not work.</h2>
+
+                    <div className="table-container">
+                      <table className="table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Action</th>
+          <th>Store URL</th>
+          <th>Purchase Screenshot</th>
+          <th>
+            <button type="button" onClick={addTransaction} className="addAction addrow">
+              Add Row
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {transactions.map((item) => (
+          <tr key={item.id}>
+            <td>
+              <input
+                    type="date"
+                    value={item.date}
+                    className="form-control"
+                    max={new Date().toISOString().split("T")[0]}  // ⬅️ prevents future dates
+                    onChange={(e) =>
+                    updateTransaction(item.id, "date", e.target.value)
+                    }
+                />
+            </td>
+            <td>
+              <input
+                type="text"
+                value={item.description}
+                className="form-control"
+                placeholder="Enter action"
+                onChange={(e) =>
+                  updateTransaction(item.id, "description", e.target.value)
+                }
+              />
+            </td>
+            <td>
+              <input
+                type="text"
+                value={item.storeUrl}
+                className="form-control"
+                placeholder="Enter store URL"
+                onChange={(e) =>
+                  updateTransaction(item.id, "storeUrl", e.target.value)
+                }
+              />
+            </td>
+            <td>
+              <div className="btnBox">
+                {!screenshots[item.id] ? (
+                  <div className="upload-container">
+                    <label className="custom-upload">
+                      Upload screenshot
+                      <input
+                        type="file"
+                        className="hidden-input"
+                        accept="image/*"
+                        onChange={(e) => uploadScreenshot(e, item.id)}
+                      />
+                    </label>
+                  </div>
+                ) : (
+                  <>
+                    <button
+                      className="showScreenShot"
+                      aria-label="screen-shot"
+                      title="screenshot"
+                    >
+                      <Image
+                        src={screenshots[item.id]}
+                        width={50}
+                        height={50}
+                        alt="uploaded"
+                      />
+                    </button>
+                    <button
+                      className="deletebtn"
+                      aria-label="delete-screenshot"
+                      title="delete-screenshot"
+                      onClick={() => removeScreenshot(item.id)}
+                    >
+                      <Image
+                        src="/images/trash.svg"
+                        width={20}
+                        height={20}
+                        alt="delete"
+                      />
+                    </button>
+                  </>
+                )}
+              </div>
+            </td>
+            <td>
+              <button
+                type="button"
+                className="deleteRowBtn addAction"
+                onClick={() => deleteTransaction(item.id)}
+              >
+                Delete Row
+              </button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
                     </div>
                 </div>
             </section>
@@ -693,7 +877,7 @@ export default function singleUser({ data }) {
                     </span>
                     <p className='txt'>Your amount will be transfered to your payPal account jouhn@payPal <a href="/profile">change payPal account</a></p>
                     <div className="text-center">
-                        <button>Redeem Now</button>
+                        <button>Redeem Cash</button>
                     </div>
                 </div>
             </div>

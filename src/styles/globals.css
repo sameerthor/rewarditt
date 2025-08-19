@@ -744,11 +744,12 @@ font-weight: 600;
     padding: .5rem;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     border: none;
-    right: 10px;
+    right: 0;
     width: 140px;
     border-radius: 5px;
     padding-bottom: 0;
     background-color: #fff;
+    padding-top: 0;
     
  }
  .headerDropdown .userImg {
@@ -782,6 +783,9 @@ font-weight: 600;
 }
 .headerDropdown .dropItem:last-child{
   border-radius: 0 0 5px 5px ;
+}
+.headerDropdown .dropItem:first-child{
+  border-radius: 5px 5px 0 0  ;
 }
 .headerDropdown .dropItem:hover a{
  color: #fff;
