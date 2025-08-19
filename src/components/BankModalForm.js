@@ -111,11 +111,11 @@ export default function BankModalForm({ show, onClose, onSuccess, initialData = 
         </Modal.Body>
 
         <Modal.Footer>
-          {isEditMode && (
+        
             <Button variant="secondary" onClick={onClose}>
-              Cancel
+              Skip
             </Button>
-          )}
+        
           <Button variant="primary" type="submit">
             Save
           </Button>

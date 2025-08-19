@@ -248,7 +248,7 @@ export default function singleUser({ data }) {
                 <div className="container" style={{borderBottom: "1px solid #ccc"}}>
                     <div className='redeemRulesContainer'>
                          <div class="rules-container">
-                            <h2 class="rules-title text-center">Rules to to reedeem your reward points</h2>
+                            <h2 class="rules-title text-center">Rules to  reedeem your reward points</h2>
                             <ul class="rules-list">
                                 <li>
                                     <div class="rule-icon">💰</div>
