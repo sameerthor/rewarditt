@@ -65,7 +65,7 @@ export default function Store({ store, relStores, faqs }) {
                       target='_blank'
                       className="joinNow"
                     >
-                      Join &amp; earn points now!
+                      Shop today!
                     </a>
                   ) : (
                     <a
