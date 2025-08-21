@@ -385,7 +385,7 @@ export default function singleUser({ userData }) {
                 </div>
             </section>
              <section className="rewards-section">
-                <div className="container" style={{ borderBottom: "1px solid #ccc" }}>
+                <div className="container yelloBg" style={{ borderBottom: "1px solid #ccc" }}>
                     <h2>Ways to Earn Points</h2>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-1">
                         <div className="col">

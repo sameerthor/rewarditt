@@ -59,9 +59,9 @@ export default function rewardPage({ }) {
                 </div>
             </section>
             <section className="rewards-section">
-                <div className="container" style={{borderBottom: "1px solid #ccc"}}>
-                        <h2>Ways to Earn Points</h2>
-                    <div className="row row-cols-lg-5 row-cols-md-2 row-cols-1">
+                <div className="container yelloBg" style={{ borderBottom: "1px solid #ccc" }}>
+                    <h2>Ways to Earn Points</h2>
+                    <div className="row row-cols-lg-5 row-cols-md-3 row-cols-1">
                         <div className="col">
                             <div className="reward-box">
                                 <div className="reward-icon">👤</div>
@@ -72,11 +72,11 @@ export default function rewardPage({ }) {
                         <div className="col">
                             <div className="reward-box">
                                 <div className="reward-icon">🛒</div>
-                                <div className="reward-title">30 Points</div>
+                                <div className="reward-title">50 Points</div>
                                 <div className="reward-desc">For Every verified purchase</div>
                             </div>
                         </div>
-                
+
                         <div className="col">
                             <div className="reward-box">
                                 <div className="reward-icon">🎂</div>
@@ -86,16 +86,16 @@ export default function rewardPage({ }) {
                         </div>
                         <div className="col">
                             <div className="reward-box">
-                                <div className="reward-icon">👬</div>
-                                <div className="reward-title">50 Points</div>
-                                <div className="reward-desc">Refer a friend </div>
+                                <div className="reward-icon">🏷️</div>
+                                <div className="reward-title">100 Points</div>
+                                <div className="reward-desc">If our coupon code does not work <small>You must purchase the product and use our referral link to claim points</small></div>
                             </div>
                         </div>
                         <div className="col">
                             <div className="reward-box">
-                                <div className="reward-icon">🏷️</div>
-                                <div className="reward-title">30 Points</div>
-                                <div className="reward-desc">If our coupon code does not work (You must use our referral link to claim points)</div>
+                                <div className="reward-icon">👥</div>
+                                <div className="reward-title">50 Points</div>
+                                <div className="reward-desc">Refer a friend </div>
                             </div>
                         </div>
 

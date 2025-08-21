@@ -757,4 +757,11 @@ ul.custom-list li {
         .upldPurchasess.giftModal .listItem {
           text-align: center;
         }
-     
+  .container.yelloBg .reward-box {
+  background: #fff;
+  min-height: 240px;
+}
+.reward-desc small {
+    font-size: .65rem;
+    display: inline-block;
+}

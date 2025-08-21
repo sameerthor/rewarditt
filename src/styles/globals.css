@@ -801,3 +801,17 @@ font-weight: 600;
 .headerDropdown .dropItem a{
     color: #000;
 }
+.container.yelloBg{
+  background-color: #ffa41d;
+  border-radius: 10px;
+  padding-top: 2rem;
+}
+
+.container.yelloBg .reward-desc{
+  color: #000;
+  font-weight: 500;
+}
+.container.yelloBg .reward-box {
+  background: #fff;
+  min-height: 210px;
+}
