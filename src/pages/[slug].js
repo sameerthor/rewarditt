@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 import _ from 'lodash'
 import moment from 'moment';
 import { parse } from 'cookie';
+import { useRef } from "react";
 
 const RatingBox = dynamic(() => import('@/components/ratingbox'),
   {
@@ -40,6 +41,27 @@ export default function Store({ store, relStores, faqs }) {
         console.error(err);
       }
     };
+    //upload ss
+    const fileInputRef = useRef(null);
+  const [preview, setPreview] = useState(null);
+
+  const handleClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setPreview({ file, url: imageUrl });
+    }
+  };
+
+  const handleDelete = () => {
+    setPreview(null);
+    fileInputRef.current.value = ""; // reset input
+  };
+
   return (
     <>
       <NextSeo
@@ -84,8 +106,8 @@ export default function Store({ store, relStores, faqs }) {
                 <div className="infoItem"><button data-bs-toggle='modal' data-bs-target='#redeemModal'>Read how to redeem ?</button></div>
                 <div className="infoItem"><button data-bs-toggle='modal' data-bs-target='#impPoints'>Important Points</button></div>
                 {token && (
-                  <div className="infoItem">
-                    <a href="/dashboard#rewardsHistory">Upload Purchase Screenshot</a>
+                  <div className="infoItem uploadSS">
+                    <a href="/dashboard/#rewardsHistory">Upload Purchase Screenshot</a>
                   </div>
                 )}
               </div>
@@ -146,50 +168,50 @@ export default function Store({ store, relStores, faqs }) {
           </div>
         </div>
       </section>
-      <section className="rewards-section">
-          <div className="container" style={{borderBottom: "1px solid #ccc"}}>
-                  <h2>Ways to Earn Points</h2>
-              <div className="row row-cols-lg-5 row-cols-md-2 row-cols-1">
-                  <div className="col">
-                      <div className="reward-box">
-                          <div className="reward-icon">👤</div>
-                          <div className="reward-title">30 Points</div>
-                          <div className="reward-desc">Create An Account</div>
-                      </div>
-                  </div>
-                  <div className="col">
-                      <div className="reward-box">
-                          <div className="reward-icon">🛒</div>
-                          <div className="reward-title">30 Points</div>
-                          <div className="reward-desc">For Every verified purchase</div>
-                      </div>
-                  </div>
-          
-                  <div className="col">
-                      <div className="reward-box">
-                          <div className="reward-icon">🎂</div>
-                          <div className="reward-title">100 Points</div>
-                          <div className="reward-desc">Happy Birthday</div>
-                      </div>
-                  </div>
-                  <div className="col">
-                      <div className="reward-box">
-                          <div className="reward-icon">👬</div>
-                          <div className="reward-title">50 Points</div>
-                          <div className="reward-desc">Refer a friend </div>
-                      </div>
-                  </div>
-                  <div className="col">
-                      <div className="reward-box">
-                          <div className="reward-icon">🏷️</div>
-                          <div className="reward-title">30 Points</div>
-                          <div className="reward-desc">If our coupon code does not work (You must use our referral link to claim points)</div>
-                      </div>
-                  </div>
+     <section className="rewards-section">
+        <div className="container" style={{ borderBottom: "1px solid #ccc" }}>
+            <h2>Ways to Earn Points</h2>
+            <div className="row row-cols-lg-5 row-cols-md-3 row-cols-1">
+                <div className="col">
+                    <div className="reward-box">
+                        <div className="reward-icon">👤</div>
+                        <div className="reward-title">30 Points</div>
+                        <div className="reward-desc">Create An Account</div>
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="reward-box">
+                        <div className="reward-icon">🛒</div>
+                        <div className="reward-title">30 Points</div>
+                        <div className="reward-desc">For Every verified purchase</div>
+                    </div>
+                </div>
 
-              </div>
-          </div>
-      </section>
+                <div className="col">
+                    <div className="reward-box">
+                        <div className="reward-icon">🎂</div>
+                        <div className="reward-title">100 Points</div>
+                        <div className="reward-desc">Happy Birthday</div>
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="reward-box">
+                        <div className="reward-icon">🏷️</div>
+                        <div className="reward-title">30 Points</div>
+                        <div className="reward-desc">If our coupon code does not work <small>You must purchase the product and use our referral link to claim points</small></div>
+                    </div>
+                </div>
+                <div className="col">
+                    <div className="reward-box">
+                        <div className="reward-icon">👥</div>
+                        <div className="reward-title">50 Points</div>
+                        <div className="reward-desc">Refer a friend </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
       <section className="rewards-section">
         <div className="container">
           <h2>How our reward program works ?</h2>
@@ -402,6 +424,46 @@ export default function Store({ store, relStores, faqs }) {
                   className="custom-list"
                   dangerouslySetInnerHTML={{ __html: store.how_to_redeem }}
                 ></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      {/* upld ss modal */}
+       <div
+        className="modal fade giftModal upldPurchasess"
+        id="upldPurchasess"
+        tabIndex="-1"
+        aria-labelledby="redeemModal"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Upload Purchase Screenshot</h5>
+              <button
+                type="button"
+                className="closeBtn ms-auto"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >x</button>
+            </div>
+            <div className="modal-body">
+              <div className="listItem">
+                
+                 <div>
+      
+
+                    {/* Styled upload button */}
+                    <a href="/dashboard#rewardsHistory"className="upload-btn">
+                        Upload Purchase Screenshot
+                      </a>
+
+                  
+
+                    
+                  </div>
               </div>
             </div>
 

@@ -693,3 +693,68 @@ ul.custom-list li {
     letter-spacing: .5px;
     margin-bottom: 1rem;
 }
+ .uploadSS{
+        text-align: center;
+        display: flex;
+        justify-content: center;
+      }
+      .implinks .infoItem.uploadSS a{
+       background-color: var(--primary-color);
+       color: #fff;
+       border-radius: 4px;
+       padding: .5rem;
+
+      }
+         .implinks .infoItem.uploadSS a:hover{
+      text-decoration: none;
+
+      }
+
+ 
+       .upldPurchasess .upload-btn {
+          background-color: #4b0082; /* Purple */
+          color: white;
+          padding: 10px 25px;
+          border: none;
+          border-radius: 25px;
+          font-size: 16px;
+          font-weight: 500;
+          cursor: pointer;
+          box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+          transition: background 0.3s ease;
+        }
+        .upldPurchasess .upload-btn:hover {
+          background-color: #360061;
+        }
+
+        .upldPurchasess .preview-container {
+          margin-top: 15px;
+          display: flex;
+            align-items: flex-start;
+          gap: 15px;
+        }
+
+        .upldPurchasess .preview-img {
+          width: 80%;
+          height: 300px;
+          border-radius: 10px;
+          border: 2px solid #ddd;
+        }
+
+         .upldPurchasess .delete-btn {
+          background: #e63946;
+          color: white;
+          padding: 8px 16px;
+          border: none;
+          border-radius: 20px;
+          font-size: 14px;
+          cursor: pointer;
+          transition: background 0.3s ease;
+        }
+        .upldPurchasess .delete-btn:hover {
+          background: #b71c1c;
+        }
+        .upldPurchasess.giftModal .listItem {
+          text-align: center;
+        }
+     

@@ -44,7 +44,7 @@ export default function rewardPage({ }) {
             <section className='usersection'>
                 <div className="container">
                     <div className='userBox'>
-                            <div className='userName'>Hi, MS DHONI</div>
+                            <div className='userName'>Hi there</div>
                             <div className='points'>You have <span>50</span> points</div>
 
                             <div class="expiry-warning">
@@ -52,7 +52,7 @@ export default function rewardPage({ }) {
                             </div>
 
                             <div class="btn-container">
-                                <a href='' class="btn">Redeem Now</a>
+                                <a href='/dashboard' class="btn">Redeem Cash</a>
                                  <a href='/reward-history' class="btn">Rewards History</a>
                             </div>
                     </div>
