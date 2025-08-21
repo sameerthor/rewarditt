@@ -262,50 +262,22 @@ export default function singleUser({ userData }) {
                             </button>
                         </div>
                     </div>
-                </div>
-            </section>
-             <section className="rewards-section redemrulesbox">
-                <div className="container">
-                    <div className='redeemRulesContainer'>
-                         <div className="reward-container">
-                        <h2>Rules to redeem your reward points</h2>
-                        <div className="reward-rules">
-                          <div className="rule-box">
-                          
-                            <p>For every 1000 points you can redeem <span className="redeem">$60</span></p>
-                          </div>
-                          <div className="rule-box">
-                          
-                            <p>For every 2000 points you can redeem <span className="redeem">$100</span></p>
-                          </div>
-                          <div className="rule-box">
-                            
-                            <p>For every 3000 points you can redeem <span className="redeem">$200</span></p>
-                          </div>
-                          <div className="rule-box">
-                            
-                            <p>For every 5000 points you can redeem <span className="redeem special">$500</span></p>
-                          </div>
-                          <div className="rule-box">
-                          
-                            <p>100 Points will be credited if coupon code does not work. <span className="redeem">100</span></p>
-                          </div>
-                          <div className="rule-box">
-                          
-                            <p>You must use our referral link to claim points</p>
-                          </div>
-                          <div className="rule-box">
-                          
-                            <p>You must have 1000 points to redeem cash</p>
-                          </div>
-                          
-                        </div>
+                    <div class="recent-stores">
+                      <h2>Recently Visited Stores</h2>
+                      <div class="store-list">
+                        <a href="#" class="store-link">Amazon</a>
+                        <a href="#" class="store-link">Flipkart</a>
+                        <a href="#" class="store-link">Myntra</a>
+                        <a href="#" class="store-link">Ajio</a>
+                        <a href="#" class="store-link">Snapdeal</a>
+                        <a href="#" class="store-link">Tata Cliq</a>
+
                       </div>
                     </div>
                 </div>
             </section>
-            <section class="recent-stores">
-                <div class="container">
+            {/* <section class="recent-stores">
+                <div class="recent-stores">
                   <h2>Recently Visited Stores</h2>
                   <div class="store-list">
                     <a href="#" class="store-link">Amazon</a>
@@ -318,120 +290,7 @@ export default function singleUser({ userData }) {
                     <a href="#" class="store-link">Nykaa</a>
                   </div>
                 </div>
-              </section>
-            <section className="rewards-section">
-                <div className="container" style={{ borderBottom: "1px solid #ccc" }}>
-                    <h2>Ways to Earn Points</h2>
-                    <div className="row row-cols-lg-5 row-cols-md-3 row-cols-1">
-                        <div className="col">
-                            <div className="reward-box">
-                                <div className="reward-icon">👤</div>
-                                <div className="reward-title">30 Points</div>
-                                <div className="reward-desc">Create An Account</div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="reward-box">
-                                <div className="reward-icon">🛒</div>
-                                <div className="reward-title">30 Points</div>
-                                <div className="reward-desc">For Every verified purchase</div>
-                            </div>
-                        </div>
-
-                        <div className="col">
-                            <div className="reward-box">
-                                <div className="reward-icon">🎂</div>
-                                <div className="reward-title">100 Points</div>
-                                <div className="reward-desc">Happy Birthday</div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="reward-box">
-                                <div className="reward-icon">🏷️</div>
-                                <div className="reward-title">30 Points</div>
-                                <div className="reward-desc">If our coupon code does not work <small>You must purchase the product and use our referral link to claim points</small></div>
-                            </div>
-                        </div>
-                        <div className="col">
-                            <div className="reward-box">
-                                <div className="reward-icon">👥</div>
-                                <div className="reward-title">50 Points</div>
-                                <div className="reward-desc">Refer a friend </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-            <section className="wrap referAndErn" id='referAndEarn'>
-                <div className="container">
-                    <div className="hero">
-                    <h2>Refer &amp; Earn</h2>
-                    <p>
-                    Invite friends to <strong>YourRewards</strong>. They get a signup
-                    bonus; you earn cashbacks + bonus multipliers. No limits.
-                    </p>
-
-                    {/* Referral Box */}
-                    <div className="ref-box">
-                        <div className="ref-input">
-                            <code>{referralLink}</code>
-                        </div>
-                        <div className="row">
-                            <button className="btn" onClick={handleCopy}>
-                            Copy Link
-                            </button>
-                            {copied && <span className="copied">Copied!</span>}
-                        </div>
-
-                        <div className="share-row">
-                            <button className="share-chip" onClick={() => handleShare("whatsapp")}>
-                            Share on WhatsApp
-                            </button>
-                            <button className="share-chip" onClick={() => handleShare("telegram")}>
-                            Share on Telegram
-                            </button>
-                            <button className="share-chip" onClick={() => handleShare("x")}>
-                            Share on X
-                            </button>
-                            <button className="share-chip" onClick={() => handleShare("email")}>
-                            Share via Email
-                            </button>
-                            <span className="spacer"></span>
-                            <button className="btn secondary" onClick={inviteContacts}>
-                            Invite Contacts
-                            </button>
-                        </div>
-                    </div>
-
-                        <div className="grid">
-                            {/* Left Column */}
-                            <div className="card">
-                                <h3>How it works</h3>
-                                <div className="steps">
-                                <div className="step">
-                                    <span className="badge">Step 1</span>
-                                    <b>Share your link</b>
-                                    <p className="muted">Send it to friends via WhatsApp, Telegram, X, or email.</p>
-                                </div>
-                                <div className="step">
-                                    <span className="badge">Step 2</span>
-                                    <b>Friend signs up</b>
-                                    <p className="muted">They join using your link and complete their first action.</p>
-                                </div>
-                                <div className="step">
-                                    <span className="badge">Step 3</span>
-                                    <b>You both earn</b>
-                                    <p className="muted">You get cashback + bonus, your friend gets a signup reward.</p>
-                                </div>
-                                </div>
-
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-            </section>
+            </section> */}
             <section className='rewardHistoryPage' id='rewardsHistory'>
                 <div className="container">
                     <h2>Reward History</h2>
@@ -445,7 +304,8 @@ export default function singleUser({ userData }) {
                                     <th>Points</th>
                                     <th>Type</th>
                                     <th>Status</th>
-                                    <th>Purchase Screenshot</th>
+                                    <th>Purchase Screenshot <br /> <small>(Upload only if coupon code <br />does not work)</small></th>
+                                    <th>Order Id</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -515,6 +375,7 @@ export default function singleUser({ userData }) {
                                                 </div>
                                             ) : null}
                                         </td>
+                                        <td><input type="text" className='form-control' placeholder='Enter Order Id' /></td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -522,6 +383,162 @@ export default function singleUser({ userData }) {
 
                     </div>
                 </div>
+            </section>
+             <section className="rewards-section">
+                <div className="container" style={{ borderBottom: "1px solid #ccc" }}>
+                    <h2>Ways to Earn Points</h2>
+                    <div className="row row-cols-lg-5 row-cols-md-3 row-cols-1">
+                        <div className="col">
+                            <div className="reward-box">
+                                <div className="reward-icon">👤</div>
+                                <div className="reward-title">30 Points</div>
+                                <div className="reward-desc">Create An Account</div>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="reward-box">
+                                <div className="reward-icon">🛒</div>
+                                <div className="reward-title">50 Points</div>
+                                <div className="reward-desc">For Every verified purchase</div>
+                            </div>
+                        </div>
+
+                        <div className="col">
+                            <div className="reward-box">
+                                <div className="reward-icon">🎂</div>
+                                <div className="reward-title">100 Points</div>
+                                <div className="reward-desc">Happy Birthday</div>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="reward-box">
+                                <div className="reward-icon">🏷️</div>
+                                <div className="reward-title">100 Points</div>
+                                <div className="reward-desc">If our coupon code does not work <small>You must purchase the product and use our referral link to claim points</small></div>
+                            </div>
+                        </div>
+                        <div className="col">
+                            <div className="reward-box">
+                                <div className="reward-icon">👥</div>
+                                <div className="reward-title">50 Points</div>
+                                <div className="reward-desc">Refer a friend </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+             <section className="rewards-section redemrulesbox">
+                <div className="container">
+                    <div className='redeemRulesContainer'>
+                         <div className="reward-container">
+                        <h2>Rules to redeem your reward points</h2>
+                        <div className="reward-rules">
+                          <div className="rule-box">
+                          
+                            <p>For every 1000 points you can redeem <span className="redeem">$60</span></p>
+                          </div>
+                          <div className="rule-box">
+                          
+                            <p>For every 2000 points you can redeem <span className="redeem">$100</span></p>
+                          </div>
+                          <div className="rule-box">
+                            
+                            <p>For every 3000 points you can redeem <span className="redeem">$200</span></p>
+                          </div>
+                          <div className="rule-box">
+                            
+                            <p>For every 5000 points you can redeem <span className="redeem special">$500</span></p>
+                          </div>
+                          <div className="rule-box">
+                          
+                            <p>100 Points will be credited if coupon code does not work. <span className="redeem">100</span></p>
+                          </div>
+                          <div className="rule-box">
+                          
+                            <p>You must use our referral link to claim points</p>
+                          </div>
+                          <div className="rule-box">
+                          
+                            <p>You must have 1000 points to redeem cash</p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </section>
+          
+           
+            <section className="wrap referAndErn" id='referAndEarn'>
+                <div className="container">
+                    <div className="hero">
+                    <h2>Refer &amp; Earn</h2>
+                    <p>
+                    Invite friends to <strong>YourRewards</strong>. They get a signup
+                    bonus; you earn cashbacks + bonus multipliers. No limits.
+                    </p>
+
+                    {/* Referral Box */}
+                    <div className="ref-box">
+                        <div className="ref-input">
+                            <code>{referralLink}</code>
+                        </div>
+                        <div className="row">
+                            <button className="btn" onClick={handleCopy}>
+                            Copy Link
+                            </button>
+                            {copied && <span className="copied">Copied!</span>}
+                        </div>
+
+                        <div className="share-row">
+                            <button className="share-chip" onClick={() => handleShare("whatsapp")}>
+                            Share on WhatsApp
+                            </button>
+                            <button className="share-chip" onClick={() => handleShare("telegram")}>
+                            Share on Telegram
+                            </button>
+                            <button className="share-chip" onClick={() => handleShare("x")}>
+                            Share on X
+                            </button>
+                            <button className="share-chip" onClick={() => handleShare("email")}>
+                            Share via Email
+                            </button>
+                            <span className="spacer"></span>
+                            <button className="btn secondary" onClick={inviteContacts}>
+                            Invite Contacts
+                            </button>
+                        </div>
+                    </div>
+
+                        <div className="grid">
+                            {/* Left Column */}
+                            <div className="card">
+                                <h3>How it works</h3>
+                                <div className="steps">
+                                <div className="step">
+                                    <span className="badge">Step 1</span>
+                                    <b>Share your link</b>
+                                    <p className="muted">Send it to friends via WhatsApp, Telegram, X, or email.</p>
+                                </div>
+                                <div className="step">
+                                    <span className="badge">Step 2</span>
+                                    <b>Friend signs up</b>
+                                    <p className="muted">They join using your link and complete their first action.</p>
+                                </div>
+                                <div className="step">
+                                    <span className="badge">Step 3</span>
+                                    <b>You both earn</b>
+                                    <p className="muted">You get cashback + bonus, your friend gets a signup reward.</p>
+                                </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div> 
             </section>
             <section className="rewards-section">
                 <div className="container">
