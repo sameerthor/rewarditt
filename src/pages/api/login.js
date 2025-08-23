@@ -21,7 +21,7 @@ export default async function handler(req, res) {
     });
 
     const data = await apiRes.json();
-
+console.log(data)
     if (!apiRes.ok) {
       return res.status(apiRes.status).json({ error: data.detail || "Login failed" });
     }

@@ -10,6 +10,9 @@ console.log(token)
     }
 
     try {
+
+        console.log(req.body)
+
         const djangoRes = await fetch(`https://admin.rewarditt.com/api/user-details/`, {
             method: req.method,
             headers: {
@@ -22,7 +25,7 @@ console.log(token)
         });
 
         const data = await djangoRes.json();
-        console.log(data)
+        
         return res.status(djangoRes.status).json(data);
     } catch (err) {
         console.error(err);

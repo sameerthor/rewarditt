@@ -150,66 +150,66 @@ export default function singleUser({ userData }) {
         }
     };
     // =========refer and earn===========
- const [copied, setCopied] = useState(false);
-  const referralLink = "https://rewarditt.com/myreward";
-  const [stats, setStats] = useState({
-    total: 8,
-    pending: 2,
-    confirmed: 6,
-    earned: 450,
-  });
+    const [copied, setCopied] = useState(false);
+    const referralLink = `https://rewarditt.com?ref=${userData.referral_link}`;
+    const [stats, setStats] = useState({
+        total: 8,
+        pending: 2,
+        confirmed: 6,
+        earned: 450,
+    });
 
-  // Progress bar widths
-  const [bars, setBars] = useState(["0%", "0%", "0%"]);
-  useEffect(() => {
-    const total = stats.total;
-    setBars([
-      Math.min((total / 10) * 100, 100) + "%",
-      total <= 10 ? "0%" : Math.min(((total - 10) / 40) * 100, 100) + "%",
-      total <= 50 ? "0%" : Math.min(((total - 50) / 50) * 100, 100) + "%",
-    ]);
-  }, [stats]);
+    // Progress bar widths
+    const [bars, setBars] = useState(["0%", "0%", "0%"]);
+    useEffect(() => {
+        const total = stats.total;
+        setBars([
+            Math.min((total / 10) * 100, 100) + "%",
+            total <= 10 ? "0%" : Math.min(((total - 10) / 40) * 100, 100) + "%",
+            total <= 50 ? "0%" : Math.min(((total - 50) / 50) * 100, 100) + "%",
+        ]);
+    }, [stats]);
 
-  // Copy to clipboard
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(referralLink);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch {
-      setCopied(false);
-    }
-  };
-
-  // Share handler
-  const handleShare = (type) => {
-    const link = encodeURIComponent(referralLink);
-    const text = encodeURIComponent(
-      "Join me on YourRewards and grab your signup bonus!"
-    );
-    const map = {
-      whatsapp: `https://wa.me/?text=${text}%20${link}`,
-      telegram: `https://t.me/share/url?url=${link}&text=${text}`,
-      x: `https://x.com/intent/tweet?text=${text}&url=${link}`,
-      email: `mailto:?subject=Join%20YourRewards&body=${text}%0A${link}`,
+    // Copy to clipboard
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(referralLink);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 1500);
+        } catch {
+            setCopied(false);
+        }
     };
-    window.open(map[type], "_blank", "noopener,noreferrer");
-  };
 
-  // Web Share API
-  const inviteContacts = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: "YourRewards",
-          text: "Join me on YourRewards and earn bonuses!",
-          url: referralLink,
-        });
-      } catch {}
-    } else {
-      alert("Sharing not supported on this browser. Copy the link instead.");
-    }
-  };
+    // Share handler
+    const handleShare = (type) => {
+        const link = encodeURIComponent(referralLink);
+        const text = encodeURIComponent(
+            "Join me on YourRewards and grab your signup bonus!"
+        );
+        const map = {
+            whatsapp: `https://wa.me/?text=${text}%20${link}`,
+            telegram: `https://t.me/share/url?url=${link}&text=${text}`,
+            x: `https://x.com/intent/tweet?text=${text}&url=${link}`,
+            email: `mailto:?subject=Join%20YourRewards&body=${text}%0A${link}`,
+        };
+        window.open(map[type], "_blank", "noopener,noreferrer");
+    };
+
+    // Web Share API
+    const inviteContacts = async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: "YourRewards",
+                    text: "Join me on YourRewards and earn bonuses!",
+                    url: referralLink,
+                });
+            } catch { }
+        } else {
+            alert("Sharing not supported on this browser. Copy the link instead.");
+        }
+    };
 
     return (
         <>
@@ -263,16 +263,16 @@ export default function singleUser({ userData }) {
                         </div>
                     </div>
                     <div class="recent-stores">
-                      <h2>Recently Visited Stores</h2>
-                      <div class="store-list">
-                        <a href="#" class="store-link">Amazon</a>
-                        <a href="#" class="store-link">Flipkart</a>
-                        <a href="#" class="store-link">Myntra</a>
-                        <a href="#" class="store-link">Ajio</a>
-                        <a href="#" class="store-link">Snapdeal</a>
-                        <a href="#" class="store-link">Tata Cliq</a>
+                        <h2>Recently Visited Stores</h2>
+                        <div class="store-list">
+                            <a href="#" class="store-link">Amazon</a>
+                            <a href="#" class="store-link">Flipkart</a>
+                            <a href="#" class="store-link">Myntra</a>
+                            <a href="#" class="store-link">Ajio</a>
+                            <a href="#" class="store-link">Snapdeal</a>
+                            <a href="#" class="store-link">Tata Cliq</a>
 
-                      </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -325,7 +325,7 @@ export default function singleUser({ userData }) {
                                         </td>
                                         <td>{p.status.charAt(0).toUpperCase() + p.status.slice(1)}</td>
                                         <td>
-                                            {p.type === 'earned_by_purchase' && p.status === 'pending' ? (
+                                            {p.type === 'earned_by_purchase' || p.type === 'coupon_not_worked' ? (
                                                 <div className="btnBox">
                                                     {p.proof_image ? (
                                                         <>
@@ -375,7 +375,19 @@ export default function singleUser({ userData }) {
                                                 </div>
                                             ) : null}
                                         </td>
-                                        <td><input type="text" className='form-control' placeholder='Enter Order Id' /></td>
+                                        <td>
+                                            {p.type === 'earned_by_purchase' || p.type === 'coupon_not_worked' ? (
+                                                <input type="text" value={p.order_id} onBlur={async (e) => {
+                                                    const newOrderId = e.target.value;
+
+                                                    if (!newOrderId || newOrderId === p.order_id) return;
+
+                                                    await fetch("/api/redeem-points/update-order-id", {
+                                                        method: "PATCH",
+                                                        headers: { "Content-Type": "application/json" },
+                                                        body: JSON.stringify({ id: p.id, order_id: newOrderId }),
+                                                    });
+                                                }} className='form-control' placeholder='Enter Order Id' />) : ''}</td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -384,7 +396,7 @@ export default function singleUser({ userData }) {
                     </div>
                 </div>
             </section>
-             <section className="rewards-section">
+            <section className="rewards-section">
                 <div className="container yelloBg" style={{ borderBottom: "1px solid #ccc" }}>
                     <h2>Ways to Earn Points</h2>
                     <div className="row row-cols-lg-5 row-cols-md-3 row-cols-1">
@@ -429,116 +441,116 @@ export default function singleUser({ userData }) {
                 </div>
             </section>
 
-             <section className="rewards-section redemrulesbox">
+            <section className="rewards-section redemrulesbox">
                 <div className="container">
                     <div className='redeemRulesContainer'>
-                         <div className="reward-container">
-                        <h2>Rules to redeem your reward points</h2>
-                        <div className="reward-rules">
-                          <div className="rule-box">
-                          
-                            <p>For every 1000 points you can redeem <span className="redeem">$60</span></p>
-                          </div>
-                          <div className="rule-box">
-                          
-                            <p>For every 2000 points you can redeem <span className="redeem">$100</span></p>
-                          </div>
-                          <div className="rule-box">
-                            
-                            <p>For every 3000 points you can redeem <span className="redeem">$200</span></p>
-                          </div>
-                          <div className="rule-box">
-                            
-                            <p>For every 5000 points you can redeem <span className="redeem special">$500</span></p>
-                          </div>
-                          <div className="rule-box">
-                          
-                            <p>100 Points will be credited if coupon code does not work. <span className="redeem">100</span></p>
-                          </div>
-                          <div className="rule-box">
-                          
-                            <p>You must use our referral link to claim points</p>
-                          </div>
-                          <div className="rule-box">
-                          
-                            <p>You must have 1000 points to redeem cash</p>
-                          </div>
-                          
+                        <div className="reward-container">
+                            <h2>Rules to redeem your reward points</h2>
+                            <div className="reward-rules">
+                                <div className="rule-box">
+
+                                    <p>For every 1000 points you can redeem <span className="redeem">$60</span></p>
+                                </div>
+                                <div className="rule-box">
+
+                                    <p>For every 2000 points you can redeem <span className="redeem">$100</span></p>
+                                </div>
+                                <div className="rule-box">
+
+                                    <p>For every 3000 points you can redeem <span className="redeem">$200</span></p>
+                                </div>
+                                <div className="rule-box">
+
+                                    <p>For every 5000 points you can redeem <span className="redeem special">$500</span></p>
+                                </div>
+                                <div className="rule-box">
+
+                                    <p>100 Points will be credited if coupon code does not work. <span className="redeem">100</span></p>
+                                </div>
+                                <div className="rule-box">
+
+                                    <p>You must use our referral link to claim points</p>
+                                </div>
+                                <div className="rule-box">
+
+                                    <p>You must have 1000 points to redeem cash</p>
+                                </div>
+
+                            </div>
                         </div>
-                      </div>
                     </div>
                 </div>
             </section>
-          
-           
+
+
             <section className="wrap referAndErn" id='referAndEarn'>
                 <div className="container">
                     <div className="hero">
-                    <h2>Refer &amp; Earn</h2>
-                    <p>
-                    Invite friends to <strong>YourRewards</strong>. They get a signup
-                    bonus; you earn cashbacks + bonus multipliers. No limits.
-                    </p>
+                        <h2>Refer &amp; Earn</h2>
+                        <p>
+                            Invite friends to <strong>YourRewards</strong>. They get a signup
+                            bonus; you earn cashbacks + bonus multipliers. No limits.
+                        </p>
 
-                    {/* Referral Box */}
-                    <div className="ref-box">
-                        <div className="ref-input">
-                            <code>{referralLink}</code>
-                        </div>
-                        <div className="row">
-                            <button className="btn" onClick={handleCopy}>
-                            Copy Link
-                            </button>
-                            {copied && <span className="copied">Copied!</span>}
-                        </div>
+                        {/* Referral Box */}
+                        <div className="ref-box">
+                            <div className="ref-input">
+                                <code>{referralLink}</code>
+                            </div>
+                            <div className="row">
+                                <button className="btn" onClick={handleCopy}>
+                                    Copy Link
+                                </button>
+                                {copied && <span className="copied">Copied!</span>}
+                            </div>
 
-                        <div className="share-row">
-                            <button className="share-chip" onClick={() => handleShare("whatsapp")}>
-                            Share on WhatsApp
-                            </button>
-                            <button className="share-chip" onClick={() => handleShare("telegram")}>
-                            Share on Telegram
-                            </button>
-                            <button className="share-chip" onClick={() => handleShare("x")}>
-                            Share on X
-                            </button>
-                            <button className="share-chip" onClick={() => handleShare("email")}>
-                            Share via Email
-                            </button>
-                            <span className="spacer"></span>
-                            <button className="btn secondary" onClick={inviteContacts}>
-                            Invite Contacts
-                            </button>
+                            <div className="share-row">
+                                <button className="share-chip" onClick={() => handleShare("whatsapp")}>
+                                    Share on WhatsApp
+                                </button>
+                                <button className="share-chip" onClick={() => handleShare("telegram")}>
+                                    Share on Telegram
+                                </button>
+                                <button className="share-chip" onClick={() => handleShare("x")}>
+                                    Share on X
+                                </button>
+                                <button className="share-chip" onClick={() => handleShare("email")}>
+                                    Share via Email
+                                </button>
+                                <span className="spacer"></span>
+                                <button className="btn secondary" onClick={inviteContacts}>
+                                    Invite Contacts
+                                </button>
+                            </div>
                         </div>
-                    </div>
 
                         <div className="grid">
                             {/* Left Column */}
                             <div className="card">
                                 <h3>How it works</h3>
                                 <div className="steps">
-                                <div className="step">
-                                    <span className="badge">Step 1</span>
-                                    <b>Share your link</b>
-                                    <p className="muted">Send it to friends via WhatsApp, Telegram, X, or email.</p>
-                                </div>
-                                <div className="step">
-                                    <span className="badge">Step 2</span>
-                                    <b>Friend signs up</b>
-                                    <p className="muted">They join using your link and complete their first action.</p>
-                                </div>
-                                <div className="step">
-                                    <span className="badge">Step 3</span>
-                                    <b>You both earn</b>
-                                    <p className="muted">You get cashback + bonus, your friend gets a signup reward.</p>
-                                </div>
+                                    <div className="step">
+                                        <span className="badge">Step 1</span>
+                                        <b>Share your link</b>
+                                        <p className="muted">Send it to friends via WhatsApp, Telegram, X, or email.</p>
+                                    </div>
+                                    <div className="step">
+                                        <span className="badge">Step 2</span>
+                                        <b>Friend signs up</b>
+                                        <p className="muted">They join using your link and complete their first action.</p>
+                                    </div>
+                                    <div className="step">
+                                        <span className="badge">Step 3</span>
+                                        <b>You both earn</b>
+                                        <p className="muted">You get cashback + bonus, your friend gets a signup reward.</p>
+                                    </div>
                                 </div>
 
-                                
+
                             </div>
                         </div>
                     </div>
-                </div> 
+                </div>
             </section>
             <section className="rewards-section">
                 <div className="container">

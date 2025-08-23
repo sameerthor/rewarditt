@@ -4,12 +4,13 @@ import MetaTags from '@/components/MetaTags';
 import "@/styles/user-info.css";
 import { useState } from "react";
 import { parse } from 'cookie';
-import {useEffect } from "react";
+import { useEffect } from "react";
 
 export default function UserInfo({ user_info }) {
     const [formData, setFormData] = useState({
         name: user_info?.username || '',
         email: user_info?.email || '',
+        dob: user_info?.dob || '',
         paypal_email: user_info?.bank_detail?.paypal_email || '',
         bank_name: user_info?.bank_detail?.bank_name || '',
         account_number: user_info?.bank_detail?.account_number || '',
@@ -21,6 +22,7 @@ export default function UserInfo({ user_info }) {
     const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
+        console.log(e.target.name,e.target.value)
         setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
     };
 
@@ -35,6 +37,7 @@ export default function UserInfo({ user_info }) {
                 body: JSON.stringify({
                     username: formData.name,
                     email: formData.email,
+                    dob: formData.dob,
                     bank_detail: {
                         paypal_email: formData.paypal_email,
                         bank_name: formData.bank_name,
@@ -62,22 +65,14 @@ export default function UserInfo({ user_info }) {
     };
     //birth date
     const [dob, setDob] = useState("");
-  const [maxDate, setMaxDate] = useState("");
+    const [maxDate, setMaxDate] = useState("");
 
-  useEffect(() => {
-    // Set today's date as the maximum allowed date
-    const today = new Date().toISOString().split("T")[0];
-    setMaxDate(today);
-  }, []);
+    useEffect(() => {
+        // Set today's date as the maximum allowed date
+        const today = new Date().toISOString().split("T")[0];
+        setMaxDate(today);
+    }, []);
 
-  const handleDobSubmit = (e) => {
-    e.preventDefault();
-    if (!dob) {
-      alert("Please enter your date of birth.");
-      return;
-    }
-    alert(`Your date of birth is: ${dob}`);
-  };
 
     return (
         <>
@@ -125,18 +120,19 @@ export default function UserInfo({ user_info }) {
                                         </div>
                                         <div className="form-floating-custom col">
                                             <input
-                                               className='form-control text-uppercase'
+                                                className='form-control text-uppercase'
                                                 type="date"
                                                 id="dob"
-                                                value={dob}
-                                                onChange={(e) => setDob(e.target.value)}
+                                                name='dob'
+                                                value={formData.dob}
+                                                onChange={handleChange}
                                                 max={maxDate}
                                                 required
                                             />
                                             <label htmlFor="dob">Enter your Date of Birth:</label>
                                         </div>
 
-                                        
+
                                         <div className="d-grid text-center col-lg-12">
                                             <button type="submit" className="btn btn-primary btn-lg rounded-3" disabled={loading}> {loading ? 'Saving...' : 'Save'} </button>
                                         </div>
